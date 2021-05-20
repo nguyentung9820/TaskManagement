@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/app.css"/>
+  </head>
+  <style>
+    
+ .avatar{
+   width: 50px;
+   height: 50px;
+   border-radius: 100%;
+    margin-top: 10px;
+   
+ }
+ * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #e4d7a3;
+}
+
+.app {
+	display: flex;
+	flex-flow: column;
+
+	width: 100%;
+	height: 100vw;
+	
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60px;
+}
+
+.lists {
+	display: flex;
+	flex: 1;
+	width: 100%;
+	overflow-x: scroll;
+}
+
+.lists .list {
+	display: flex;
+	flex-flow: column;
+	flex: 1;
+
+	width: 100%;
+	min-width: 250px;
+	max-width: 350px;
+	height: 100%;
+	min-height: 150px;
+
+	background-color: rgba(0, 0, 0, 0.1);
+	margin: 0 15px;
+	padding: 8px;
+	transition: all 0.2s linear;
+}
+
+.lists .list .list-item {
+	background-color: #F3F3F3;
+	border-radius: 8px;
+	padding: 15px 20px;
+	text-align: center;
+	margin: 4px 0px;
+}
+.inp{
+	width: 100%;
+	height: 5rem;
+	border: hidden;
+	font-size: 20px;
+	text-align: center;
+	background-color: wheat ;
+	border-radius: 10px;
+}
+.add{
+	border-radius: 10px;
+  padding: 15px 25px;
+  font-size: 15px;
+  text-decoration: none;
+  margin: 15px;
+  color: rgb(66, 66, 64);
+  position: relative;
+  display: inline-block;
+  width: 30%;
+  background-color: #d5e79e;
+}
+.titlebox{
+	border:hidden;
+	background: wheat;
+	border-radius: 20px;
+	width: 100%;
+	height: 2rem;
+	font-size: large;
+	text-align: center;
+}
+.titlemain{
+	font-size: large;
+}
+.titlebox2{
+	border:hidden;
+	background: rgb(226, 218, 199);
+	border-radius: 20px;
+	width: 100%;
+	height: 1.5rem;
+	font-size: medium;
+	text-align: center;
+}
+.deadline{
+	padding: 5px;
+	font-size: large;
+}
+.sel{
+	border:hidden;
+	font-size: large;
+}
+.save-form{
+margin-left: 2rem;
+background-color: seashell;
+width: 3rem;
+height: 2rem;
+border: hidden;
+border-radius: 50%;
+text-align: center;
+}
+.save-form:hover{
+	background-color:tan ;
+}
+#add{
+	margin-left:1rem;
+}
+  </style>
+  <body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">ScheduleX</label>
+      <ul>
+        <li><a class="active" href="#">Profile</a></li>
+      </ul>
+      <ul>
+        <li><img class="avatar" src="/img/avatar.png" alt="change your avatar"></li>
+      </ul>
+    </nav>
+	
+	<form action="/saveform" method="Post">
+		<input class="save-form" type="submit" value="SAVE"/>
+		
+	<div class="app">
+		<div class="lists">
+			<div class="list">
+				<div class="titlemain"><input class="titlebox" type="text" value="OPEN" name="status"/></div>
+				{{!--  hien thi --}}
+				<div class="list-item" draggable="true">
+					<input class="titlebox2" type="text" name="title"  />
+					<input class="inp" type="text" name="description" />
+					<div class="deadline">Deadline:
+						<select class="sel" name="deadline">
+							<option> </option>
+							<option>Monday</option>
+							<option>Tuesday</option>
+							<option>Thursday</option>
+							<option>Wedbnesday</option>
+							<option>Friday</option>
+							<option>Saturday</option>
+							<option>Sunday</option>
+						</select>
+					</div>
+				
+				</div>
+				<div class="list-item" draggable="true">
+					<input class="titlebox2" type="text" name="title"  />
+					<input class="inp" type="text" name="description" />
+					<div class="deadline">Deadline:
+						<select class="sel" name="deadline">
+							<option> </option>
+							<option>Monday</option>
+							<option>Tuesday</option>
+							<option>Thursday</option>
+							<option>Wedbnesday</option>
+							<option>Friday</option>
+							<option>Saturday</option>
+							<option>Sunday</option>
+						</select>
+					</div>
+				</div>
+				<div id="ajax"></div>
+				<button type="button" onclick="newtable()" class="save-form">ADD</button>
+ 	
+				{{!-- <div class="list-item" draggable="true">
+					<input class="titlebox2" type="text" />
+					<input class="inp" type="text">
+					<div class="deadline">Deadline:
+						<select class="sel">
+							<option> </option>
+							<option>Monday</option>
+							<option>Tuesday</option>
+							<option>Thursday</option>
+							<option>Wedbnesday</option>
+							<option>Friday</option>
+							<option>Saturday</option>
+							<option>Sunday</option>
+						</select>
+					</div>
+				</div>
+				<div class="list-item" draggable="true">
+					<input class="titlebox2" type="text" />
+					<input class="inp" type="text">
+					<div class="deadline">Deadline:
+						<select class="sel">
+							<option> </option>
+							<option>Monday</option>
+							<option>Tuesday</option>
+							<option>Thursday</option>
+							<option>Wedbnesday</option>
+							<option>Friday</option>
+							<option>Saturday</option>
+							<option>Sunday</option>
+						</select>
+					</div>
+				</div> --}}
+				{{!-- <button class="add" >ADD</button> --}}
+			</div>
+			<div class="list">
+				<div class="titlemain"><input class="titlebox" type="text" value="IN PROGRESS" ></div>
+				<div class="list-item" draggable="true">
+					<input class="titlebox2" type="text" name="title" />
+					<input class="inp" type="text" name="description">
+					<div class="deadline">Deadline:
+						<select class="sel" name="deadline">
+							<option> </option>
+							<option>Monday</option>
+							<option>Tuesday</option>
+							<option>Thursday</option>
+							<option>Wedbnesday</option>
+							<option>Friday</option>
+							<option>Saturday</option>
+							<option>Sunday</option>
+						</select>
+						
+					</div>
+
+				</div>
+			</div>
+			<div class="list">
+				<div class="titlemain"><input class="titlebox" type="text" value="IN REVIEW" /></div>
+				
+			</div>
+			<div class="list">
+				<div class="titlemain"><input class="titlebox" type="text" value="DONE" ></div>
+				
+			</div>
+		</div>
+	</div>
+    </form>
+  </body>
+  	<script>
+const list = document.querySelectorAll('.list');
+const list_items = document.querySelectorAll('.list-item');
+const lists = document.querySelectorAll('.list');
+
+function newtable() {
+var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("ajax").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "table.hbs", true);
+  xhttp.send();}
+
+
+let draggedItem = null;
+for(let j = 0; j < list.length; j++){
+for (let i = 0; i < list_items.length; i++) {
+	const item = list_items[i];
+	const field = list[j];
+	
+	// UI
+	item.addEventListener('dragstart', function () {
+		draggedItem = item;
+		setTimeout(function () {
+			item.style.display = 'none';
+		}, 0)
+	});
+
+	item.addEventListener('dragend', function () {
+		setTimeout(function () {
+			draggedItem.style.display = 'block';
+			draggedItem = null;
+		}, 0);
+	})
+
+	for (let j = 0; j < lists.length; j ++) {
+		const list = lists[j];
+
+		list.addEventListener('dragover', function (e) {
+			e.preventDefault();
+		});
+		
+		list.addEventListener('dragenter', function (e) {
+			e.preventDefault();
+			this.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
+		});
+
+		list.addEventListener('dragleave', function (e) {
+			this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+		});
+
+		list.addEventListener('drop', function (e) {
+			console.log('drop');
+			this.append(draggedItem);
+			this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+		});
+	}
+	}
+}
+</script>
+
+</html>
