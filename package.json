@@ -15,6 +15,7 @@
     "express-handlebars": "^5.3.2",
     "handlebars": "^4.7.7",
     "mongoose": "^5.12.9",
+    "node-popup": "^0.1.14",
     "node-sass": "^6.0.0"
   },
   "devDependencies": {

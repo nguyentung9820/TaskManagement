@@ -7,7 +7,6 @@ const morgan = require('morgan');
 const handlebars = require('express-handlebars');
 const route = require('./routes/index');
 const db = require('./config/db');
-
 //connect db
 db.connect();
 

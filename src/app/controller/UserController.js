@@ -1,6 +1,6 @@
 const Course = require("../models/Course");
 const { mutipleMongooseToObject } = require('../../util/mongoose')
-
+const alert = require('node-popup');
 class UserController{
    async index(req, res, next) {
     
@@ -13,11 +13,11 @@ class UserController{
            if(info.password == pass){
                res.status(201).render('user',{layout: false})
                 
-           }else res.render('login',{layout: false});
+           }
            
         } catch (error) {
-            res.render('home');
-            console.log('fail')
+            res.render('login',{layout: false})      
+        
         }
     }
    
