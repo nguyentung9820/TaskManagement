@@ -1,5 +1,6 @@
 const Course = require("../models/Course");
 const { mutipleMongooseToObject } = require('../../util/mongoose')
+
 class UserController{
    async index(req, res, next) {
     
@@ -12,7 +13,7 @@ class UserController{
            if(info.password == pass){
                res.status(201).render('user',{layout: false})
                 
-           }else res.send('pls login');
+           }else res.render('login',{layout: false});
            
         } catch (error) {
             res.render('home');
@@ -20,6 +21,7 @@ class UserController{
         }
     }
    
+    
 }
 
 module.exports = new UserController;
