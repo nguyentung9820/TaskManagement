@@ -7,11 +7,13 @@ const morgan = require('morgan');
 const handlebars = require('express-handlebars');
 const route = require('./routes/index');
 const db = require('./config/db');
-const cookieParser = require('cookie-parser')
-
+const cookieParser = require('cookie-parser');
+const methodOverride = require('method-override');
 //connect db
 db.connect();
-
+//override
+app.use(methodOverride('_method'))
+//cookie
 app.use(cookieParser());
 //img
 app.use(express.static(path.join(__dirname,'public')));

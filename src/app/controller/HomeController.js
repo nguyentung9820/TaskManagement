@@ -7,7 +7,9 @@ class HomeController {
             res.render('home')
                
     }
-    
+    about(req, res, next) {
+        res.render('aboutus')
+    }
 
 }
 
