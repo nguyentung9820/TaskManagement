@@ -7,7 +7,7 @@ class middlewares{
             res.redirect('/login')
             return;
         }
-        const user =  Course.findOne({username: req.cookies['oreo']});
+        const user =  Course.findOne({_id: req.cookies['oreo']});
         // res.send('user')
         if(!user){
             res.redirect('/login')
