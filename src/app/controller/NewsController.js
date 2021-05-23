@@ -21,7 +21,7 @@ class NewsController {
         const auth = req.cookies['oreo'];
 
         Course.updateOne({_id: auth}, req.body)
-        .then(() => res.redirect('/news'))
+        .then(() => res.redirect('/user'))
         .catch(next)
     }
     
