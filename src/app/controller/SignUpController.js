@@ -4,8 +4,10 @@ class SignUpController {
    
     signup(req, res){
         const course = new Course(req.body);
+        // res.send(course)
         course.save();
-        res.render('login', {layout: false});
+        res.redirect('/login')
+        // res.send('ok')
     }
     
 }

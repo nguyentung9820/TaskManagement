@@ -7,9 +7,12 @@ const morgan = require('morgan');
 const handlebars = require('express-handlebars');
 const route = require('./routes/index');
 const db = require('./config/db');
+const cookieParser = require('cookie-parser')
+
 //connect db
 db.connect();
 
+app.use(cookieParser());
 //img
 app.use(express.static(path.join(__dirname,'public')));
 

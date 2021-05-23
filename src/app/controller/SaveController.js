@@ -5,6 +5,7 @@ class SaveController {
    
     table(req, res, next){
         const tabless = new Table(req.body);
+        // res.send(req.body)
         tabless.save();
         // res.render('user', {layout: false});
         Table.find({})

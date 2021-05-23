@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/app.css"/>
-	<link rel="stylesheet" href="/css/user.css"/>
   </head>
   <style>
 	  .avatar {
@@ -111,17 +110,33 @@ header {
   font-size: large; }
 
 .save-form {
-  margin-left: 2rem;
+  margin-left: 4rem;
   background-color: seashell;
   width: 3rem;
   height: 2rem;
   border: hidden;
-  border-radius: 50%;
+  border-radius: 20%;
   text-align: center; }
 
 .save-form:hover {
   background-color: tan; }
-
+.number_table{
+  
+  background-color: seashell;
+  width: 3rem;
+  height: 2rem;
+  border: hidden;
+  border-radius: 20px;
+  text-align: center;
+  }
+  .number_table:hover {
+  background-color: tan; }
+.ADD{
+	margin-left: 1.5rem;
+}
+.but{
+	display: flex;
+}
   </style>
   <body>
     <nav>
@@ -132,23 +147,29 @@ header {
       <label class="logo">ScheduleX</label>
       <ul>
         <li><a class="active" href="/news">Profile</a></li>
-		<li><a class="active" href="#">Log out</a></li>
+		<li><a class="active" href="/logout">Log out</a></li>
 
       </ul>
       <ul>
         <li><img class="avatar" src="/img/avatar.png" alt="change your avatar"></li>
       </ul>
     </nav>
+	<div class="but">
+	<form method="POST" action="/addform">
+		<button type="submit" class="ADD">ADD:</button>
+		<input class="number_table"  type="number" name="table"/>
+		
+	</form>
 	
 	<form action="/saveform" method="post">
 		<input class="save-form" type="submit" value="SAVE"/>
+	</div>
+	
 		
 	<div class="app">
 		<div class="lists">
 			<div class="list">
 				<div class="titlemain"><input class="titlebox" type="text" value="OPEN" name="status"/></div>
-
-
 				{{!--  hien thi --}}
 				<div class="list-item" draggable="true">
 					<input class="titlebox2" type="text" name="title"  />
@@ -166,148 +187,16 @@ header {
 						</select>
 					</div>
 				</div>
-				<div class="list-item" draggable="true">
-					<input class="titlebox2" type="text" name="title"  />
-					<input class="inp" type="text" name="description" />
-					<div class="deadline">Deadline:
-						<select class="sel" name="deadline">
-							<option> </option>
-							<option>Monday</option>
-							<option>Tuesday</option>
-							<option>Thursday</option>
-							<option>Wedbnesday</option>
-							<option>Friday</option>
-							<option>Saturday</option>
-							<option>Sunday</option>
-						</select>
-					</div>
-				</div>
-				<div id="ajax">
- 				</div>
-				<div class="list-item" draggable="true">
-					<input class="titlebox2" type="text" />
-					<input class="inp" type="text">
-					<div class="deadline">Deadline:
-						<select class="sel">
-							<option> </option>
-							<option>Monday</option>
-							<option>Tuesday</option>
-							<option>Thursday</option>
-							<option>Wedbnesday</option>
-							<option>Friday</option>
-							<option>Saturday</option>
-							<option>Sunday</option>
-						</select>
-					</div>
-				</div>
-				
 			</div>
 			<div class="list">
-				<div class="titlemain"><input class="titlebox" type="text" value="IN PROGRESS" name="status" ></div>
-				<div class="list-item" draggable="true">
-					<input class="titlebox2" type="text" name="title" />
-					<input class="inp" type="text" name="description">
-					<div class="deadline">Deadline:
-						<select class="sel" name="deadline">
-							<option> </option>
-							<option>Monday</option>
-							<option>Tuesday</option>
-							<option>Thursday</option>
-							<option>Wedbnesday</option>
-							<option>Friday</option>
-							<option>Saturday</option>
-							<option>Sunday</option>
-						</select>
-					</div>
+				<div class="titlemain"><input class="titlebox" type="text" value="IN PROGRESS"  ></div>
+			</div>
+			<div class="list">
+				<div class="titlemain"><input class="titlebox" type="text" value="IN REVIEW" /></div>
+			</div>
+			<div class="list">
+				<div class="titlemain"><input class="titlebox" type="text" value="DONE" ></div>
 
-				</div>
-				<div class="list-item" draggable="true">
-					<input class="titlebox2" type="text" />
-					<input class="inp" type="text">
-					<div class="deadline">Deadline:
-						<select class="sel">
-							<option> </option>
-							<option>Monday</option>
-							<option>Tuesday</option>
-							<option>Thursday</option>
-							<option>Wedbnesday</option>
-							<option>Friday</option>
-							<option>Saturday</option>
-							<option>Sunday</option>
-						</select>
-					</div>
-				</div>
-			</div>
-			<div class="list">
-				<div class="titlemain"><input class="titlebox" type="text" value="IN REVIEW" name="status" /></div>
-				<div class="list-item" draggable="true">
-					<input class="titlebox2" type="text" name="title" />
-					<input class="inp" type="text" name="description">
-					<div class="deadline">Deadline:
-						<select class="sel" name="deadline">
-							<option> </option>
-							<option>Monday</option>
-							<option>Tuesday</option>
-							<option>Thursday</option>
-							<option>Wedbnesday</option>
-							<option>Friday</option>
-							<option>Saturday</option>
-							<option>Sunday</option>
-						</select>
-					</div>
-
-				</div>
-				<div class="list-item" draggable="true">
-					<input class="titlebox2" type="text" name="title" />
-					<input class="inp" type="text" name="description">
-					<div class="deadline">Deadline:
-						<select class="sel" name="deadline">
-							<option> </option>
-							<option>Monday</option>
-							<option>Tuesday</option>
-							<option>Thursday</option>
-							<option>Wedbnesday</option>
-							<option>Friday</option>
-							<option>Saturday</option>
-							<option>Sunday</option>
-						</select>
-					</div>
-				</div>
-			</div>
-			<div class="list">
-				<div class="titlemain"><input class="titlebox" type="text" value="DONE" name="status" ></div>
-				<div class="list-item" draggable="true">
-					<input class="titlebox2" type="text" name="title" />
-					<input class="inp" type="text" name="description">
-					<div class="deadline">Deadline:
-						<select class="sel" name="deadline">
-							<option> </option>
-							<option>Monday</option>
-							<option>Tuesday</option>
-							<option>Thursday</option>
-							<option>Wedbnesday</option>
-							<option>Friday</option>
-							<option>Saturday</option>
-							<option>Sunday</option>
-						</select>
-					</div>
-				</div>
-				<div class="list-item" draggable="true">
-					<input class="titlebox2" type="text" name="title" />
-					<input class="inp" type="text" name="description">
-					<div class="deadline">Deadline:
-						<select class="sel" name="deadline">
-							<option> </option>
-							<option>Monday</option>
-							<option>Tuesday</option>
-							<option>Thursday</option>
-							<option>Wedbnesday</option>
-							<option>Friday</option>
-							<option>Saturday</option>
-							<option>Sunday</option>
-						</select>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
