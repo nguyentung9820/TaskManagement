@@ -2,8 +2,8 @@
 <html>
 <head>
     <link rel="stylesheet" href="/css/news.css"/>
-    <link rel="stylesheet" href="/css/app.css" />
-    
+    <link rel="stylesheet" href="/css/user.css" />
+  
 </head>
 <body>
     <nav>
@@ -18,7 +18,7 @@
 
       </ul>
       <ul>
-        <li><img class="avatar" src="/img/avatar.png" alt="change your avatar"></li>
+        <li><a href="/user"><img class="avatar" src="/img/avatar.png" alt="change your avatar"></a></li>
       </ul>
     </nav>
 <div>
@@ -29,15 +29,19 @@
   <form action="/news?_method=PUT" method="POST">
     <label for="Username">Username</label>
     <input type="text" id="username" name="username" placeholder="Your username" value="{{this.username}}">
+    <br/>
 
     <label for="Password">Password</label>
     <input type="password" id="password" name="password" placeholder="Password.." value="{{this.password}}">
+    <br/>
 
     <label for="Email">Email</label>
     <input type="email" id="email" name="email" placeholder="Your email.." value="{{this.email}}">
+    <br/>
 
     <label for="company">Company</label>
     <input type="text" id="Company" name="company" placeholder="Your company.." value="{{this.company}}">
+    <br/>
 
     <input type="submit" value="Submit">
   </form>

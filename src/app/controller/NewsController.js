@@ -17,11 +17,12 @@ class NewsController {
         })
         .catch(next);
     }
+
     edit(req, res, next){
         const auth = req.cookies['oreo'];
 
         Course.updateOne({_id: auth}, req.body)
-        .then(() => res.redirect('/user'))
+        .then(() => res.redirect('/news'))
         .catch(next)
     }
     

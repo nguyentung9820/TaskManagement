@@ -9,6 +9,9 @@ class SignUpController {
         res.redirect('/login')
         // res.send('ok')
     }
+    index(req, res){
+        res.render('login')
+    }
     
 }
 

@@ -1,5 +1,8 @@
 const Course = require("../models/Course");
 class SigninController {
+    index(req, res , next){
+        res.render('user', {layout: false})
+    }
 
     async user(req, res, next) {
         // res.send('done')
@@ -10,8 +13,8 @@ class SigninController {
             const info = await Course.findOne({username:user});
             if(!info){
 
-                res.send('ok')
-                // res.redirect('/login')
+                // res.send('ok')
+                res.redirect('/login')
                 return;
             }
             else{

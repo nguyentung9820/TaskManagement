@@ -9,7 +9,6 @@
     font-family: montserrat;
   }
   nav{
-    background:rgb(81, 120, 226);
     height: 80px;
     width: 100%;
   }
@@ -17,8 +16,11 @@
     color: white;
     font-size: 35px;
     line-height: 80px;
-    padding: 0 100px;
+    padding: 0 200px;
     font-weight: bold;
+  }
+  .logo:hover{
+      color:#8aa4b8
   }
   nav ul{
     float: right;
@@ -37,11 +39,11 @@
     text-transform: uppercase;
   }
   a.active{
-    background:rgb(82, 93, 194);
+    background:rgb(55, 71, 163);
     transition: .5s;
   }
   a:hover{
-      background:rgb(17, 9, 51);
+      background:rgb(116, 109, 206);
   }
   .checkbtn{
     font-size: 30px;
@@ -91,7 +93,7 @@
       color: #0082e6;
     }
     a:hover{
-        background-color: rgb(77, 112, 228);
+        background-color: rgb(12, 114, 92);
     }
     #check:checked ~ ul{
       left: 0;
