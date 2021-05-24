@@ -7,177 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/user.css" />
 
-  <script>
-    $(document).ready(function () {
-      $("#form-add").hide();
-      var countClick = 0;
-
-      $("#show-form").click(function () {
-        if(countClick%2 == 0) {
-          $("#form-add").show();
-          countClick++;
-        } else {
-          $("#form-add").hide();
-          countClick++;
-        }
-      });
-    });
-  </script>
-
 </head>
-<style>
-  .avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    margin-top: 10px;
-  }
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    background-color:white;
-  }
-
-  .app {
-    display: flex;
-    flex-flow: column;
-    width: 100%;
-    height: 600px;
-  }
-
-  header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-  }
-
-  .lists {
-    display: flex;
-    flex: 1;
-    width: 100%;
-    overflow-x: scroll;
-  }
-
-  .lists .list {
-    display: flex;
-    flex-flow: column;
-    flex: 1;
-    width: 100%;
-    min-width: 250px;
-    max-width: 350px;
-    height: 50%;
-    background-color: rgba(0, 0, 0, 0.1);
-    margin: 0 15px;
-    padding: 8px;
-    transition: all 0.2s linear;
-    border-radius: 10px;
-  }
-
-  .lists .list .list-item {
-    background-color: #eef0fd;
-    border-radius: 8px;
-    padding: 15px 20px;
-    text-align: center;
-    margin: 4px 0px;
-  }
-
-  .inp {
-    width: 100%;
-    height: 5rem;
-    border: hidden;
-    font-size: 20px;
-    text-align: center;
-    background-color: rgb(240, 232, 219);
-    border-radius: 10px;
-  }
-
-  .add {
-    border-radius: 10px;
-    padding: 15px 25px;
-    font-size: 15px;
-    text-decoration: none;
-    margin: 15px;
-    color: #424240;
-    position: relative;
-    display: inline-block;
-    width: 30%;
-    background-color: #d5e79e;
-  }
-
-  .titlebox {
-    border: hidden;
-    background: wheat;
-    border-radius: 20px;
-    width: 100%;
-    height: 2rem;
-    font-size: large;
-    text-align: center;
-  }
-
-  
-
-  .titlebox2 {
-    border: hidden;
-    background: #e2dac7;
-    border-radius: 20px;
-    width: 100%;
-    height: 1.5rem;
-    font-size: medium;
-    text-align: center;
-  }
-
-  .deadline {
-    padding: 5px;
-    font-size: large;
-  }
-
-  .sel {
-    border: hidden;
-    font-size: large;
-  }
-
-  .save-form {
-    margin-left: 4rem;
-    background-color: seashell;
-    width: 3rem;
-    height: 2rem;
-    border: hidden;
-    border-radius: 20%;
-    text-align: center;
-  }
-
-  .save-form:hover {
-    background-color: tan;
-  }
-
-  .number_table {
-
-    background-color: seashell;
-    width: 3rem;
-    height: 2rem;
-    border: hidden;
-    border-radius: 20px;
-    text-align: center;
-  }
-.contain-all{
-  background-image: url('/img/mou2.png');
-}
-  
-
-  .ADD {
-    margin-left: 2rem;
-  }
-
-  .but {
-    display: flex;
-  }
-</style>
 
 <body>
     <div class="contain-all">
@@ -196,99 +27,113 @@
       <li><img class="avatar" src="/img/avatar.png" alt="change your avatar"></li>
     </ul>
   </nav>
-<div class="but">
-    <button type="submit" class="ADD" id="show-form">ADD FORM</button>
-
-    <form action="/saveform" method="post">
-      <input class="save-form" type="submit" value="SAVE" />
-  </div>
 
 
-  <div class="app">
-    <div class="lists">
-      <div class="list">
-        {{!-- hien thi --}}
-        <div class="list-item" draggable="true" id="form-add">
-          <input class="titlebox2" type="text" name="title" />
-          <input class="inp" type="text" name="description" />
-          <div class="deadline">Deadline:
-            <select class="sel" name="deadline">
-              <option> </option>
-              <option>Monday</option>
-              <option>Tuesday</option>
-              <option>Thursday</option>
-              <option>Wedbnesday</option>
-              <option>Friday</option>
-              <option>Saturday</option>
-              <option>Sunday</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <div class="list">
-      </div>
-      <div class="list">
-      </div>
-      <div class="list">
 
-      </div>
-    </div>
-  </div>
-  </form>
+  <div class="but">
+    <button  class="ADD" id="show-form1">ADD FORM</button>
+    <button  class="ADD" id="show-form2">ADD FORM</button>
+    <button  class="ADD" id="show-form3">ADD FORM</button>
+    <button  class="ADD" id="show-form4">ADD FORM</button>
   </div>
   
+
+
+<form action="/saveform" method="post">
+      <input class="save-form" type="submit" value="SAVE" />
+  <div class="app">
+    <div class="lists">
+
+      <div class="list">
+        <div class="list-item"  id="form-add1">
+          <input class="titlebox2" type="text" name="title" placeholder="Title"/>
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"></textarea>
+            <input class="date" name="deadline" type="datetime-local"/>              
+        </div>
+      </div>
+
+      <div class="list">
+        <div class="list-item"  id="form-add2">
+          <input class="titlebox2" type="text" name="title" placeholder="Title"/>
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"></textarea>
+            <input class="date" name="deadline" type="datetime-local"/>              
+        </div>
+      </div>
+      
+        <div class="list">
+          <div class="list-item"  id="form-add3">
+            <input class="titlebox2" type="text" name="title" placeholder="Title" />
+            <textarea class="inp" type="text" name="description" placeholder="Descriptions"></textarea>
+              <input class="date" name="deadline" type="datetime-local"/>              
+          </div>
+        </div>
+      
+        <div class="list">
+          <div class="list-item"  id="form-add4">
+            <input class="titlebox2" type="text" name="title" placeholder="Title"/>
+            <textarea class="inp" type="text" name="description" placeholder="Descriptions"></textarea>
+              <input class="date" name="deadline" type="datetime-local" />              
+          </div>
+        </div>
+      
+      
+    </div>
+
+  </div>
+
+  </div>
+</form>
+
 </body>
 <script>
+  $(document).ready(function () {
+      $("#form-add1").hide();
+      $("#form-add2").hide();
+      $("#form-add3").hide();
+      $("#form-add4").hide();
+      var countClick1 = 0;
+      var countClick2 = 0;
+      var countClick3 = 0;
+      var countClick4 = 0;
 
-  const list = document.querySelectorAll('.list');
-  const list_items = document.querySelectorAll('.list-item');
-  const lists = document.querySelectorAll('.list');
 
-  let draggedItem = null;
-  for (let j = 0; j < list.length; j++) {
-    for (let i = 0; i < list_items.length; i++) {
-      const item = list_items[i];
-      const field = list[j];
-
-      // UI
-      item.addEventListener('dragstart', function () {
-        draggedItem = item;
-        setTimeout(function () {
-          item.style.display = 'none';
-        }, 0)
+      $("#show-form1").click(function () {
+        if(countClick1%2 == 0) {
+          $("#form-add1").show();
+          countClick1++;
+        } else {
+          $("#form-add1").hide();
+          countClick1++;
+        }
       });
-
-      item.addEventListener('dragend', function () {
-        setTimeout(function () {
-          draggedItem.style.display = 'block';
-          draggedItem = null;
-        }, 0);
-      })
-
-      for (let j = 0; j < lists.length; j++) {
-        const list = lists[j];
-
-        list.addEventListener('dragover', function (e) {
-          e.preventDefault();
-        });
-
-        list.addEventListener('dragenter', function (e) {
-          e.preventDefault();
-          this.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
-        });
-
-        list.addEventListener('dragleave', function (e) {
-          this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
-        });
-
-        list.addEventListener('drop', function (e) {
-          console.log('drop');
-          this.append(draggedItem);
-          this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
-        });
-      }
-    }
-  }
+      $("#show-form2").click(function () {
+        if(countClick2%2 == 0) {
+          $("#form-add2").show();
+          countClick2++;
+        } else {
+          $("#form-add2").hide();
+          countClick2++;
+        }
+      });
+      $("#show-form3").click(function () {
+        if(countClick3%2 == 0) {
+          $("#form-add3").show();
+          countClick3++;
+        } else {
+          $("#form-add3").hide();
+          countClick3++;
+        }
+      });
+      $("#show-form4").click(function () {
+        if(countClick4%2 == 0) {
+          $("#form-add4").show();
+          countClick4++;
+        } else {
+          $("#form-add4").hide();
+          countClick4++;
+        }
+      });
+    });
 </script>
 
 </html>

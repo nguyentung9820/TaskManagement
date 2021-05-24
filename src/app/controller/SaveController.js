@@ -5,17 +5,17 @@ class SaveController {
    
     table(req, res, next){
         const tabless = new Table(req.body);
-        // res.send(req.body)
         tabless.save();
-        // res.render('user', {layout: false});
-        Table.find({})
-        .then(tables => {
-            res.render('user', { 
-                tables: mutipleMongooseToObject(tables), 
-                layout: false
-            });
-        })
-        .catch(next);
+        res.redirect('/user')
+        // Table.find({})
+        // .then(tables => {
+        //     res.redirect('/user',{
+        //         tables: mutipleMongooseToObject(tables), 
+
+        //     }
+        //     );
+        // })
+        // .catch(next);
     }
     
 }
