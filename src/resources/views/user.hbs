@@ -1,88 +1,81 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/user.css" />
-
 </head>
 
 
 <body>
     <div class="contain-all">
-  <nav>
-    <input type="checkbox" id="check">
-    <label for="check" class="checkbtn">
-      <i class="fas fa-bars"></i>
-    </label>
-    <label class="logo">ScheduleX</label>
-    <ul>
-      <li><a class="active" href="/news">Profile</a></li>
-      <li><a class="active" href="/logout">Log out</a></li>
+      <nav>
+          <input type="checkbox" id="check">
+          <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+          </label>
+          <label class="logo">ScheduleX</label>
+        <ul>
+          <li><a class="active" href="/news">Profile</a></li>
+          <li><a class="active" href="/logout">Log out</a></li>
+        </ul>
+        <ul>
+          <li><img class="avatar" src="/img/avatar.png" alt="change your avatar"></li>
+        </ul>
+      </nav>
 
-    </ul>
-    <ul>
-      <li><img class="avatar" src="/img/avatar.png" alt="change your avatar"></li>
-    </ul>
-  </nav>
+      <div class="toolbars">
+        <div class="but">
+          <button  class="ADD" id="show-form1">+</button>
+          <button  class="ADD" id="show-form2">+</button>
+          <button  class="ADD" id="show-form3">+</button>
+          <button  class="ADD" id="show-form4">+</button>
+        </div>
+      </div>
 
-
-
-  <div class="but">
-    <button  class="ADD" id="show-form1">ADD FORM</button>
-    <button  class="ADD" id="show-form2">ADD FORM</button>
-    <button  class="ADD" id="show-form3">ADD FORM</button>
-    <button  class="ADD" id="show-form4">ADD FORM</button>
-  </div>
-  
-
-
-<form action="/saveform" method="post">
-      <input class="save-form" type="submit" value="SAVE" />
   <div class="app">
     <div class="lists">
-
       <div class="list">
-        <div class="list-item"  id="form-add1">
+        <form class="list-item" method="POST" action="/saveform"  id="form-add1">
           <input class="titlebox2" type="text" name="title" placeholder="Title"/>
           <textarea class="inp" type="text" name="description" placeholder="Descriptions"></textarea>
-            <input class="date" name="deadline" type="datetime-local"/>              
-        </div>
+          <input class="date" name="deadline" type="datetime-local"/> 
+          <input class="save-form" type="submit" value="SAVE" />
+        </form>
       </div>
 
       <div class="list">
-        <div class="list-item"  id="form-add2">
+        <form class="list-item" method="POST"  id="form-add2">
           <input class="titlebox2" type="text" name="title" placeholder="Title"/>
           <textarea class="inp" type="text" name="description" placeholder="Descriptions"></textarea>
-            <input class="date" name="deadline" type="datetime-local"/>              
-        </div>
+            <input class="date" name="deadline" type="datetime-local"/>    
+            <input class="save-form" type="submit" value="SAVE" />
+        </form>
       </div>
       
         <div class="list">
-          <div class="list-item"  id="form-add3">
+          <form class="list-item" method="POST"  id="form-add3">
             <input class="titlebox2" type="text" name="title" placeholder="Title" />
             <textarea class="inp" type="text" name="description" placeholder="Descriptions"></textarea>
-              <input class="date" name="deadline" type="datetime-local"/>              
-          </div>
+              <input class="date" name="deadline" type="datetime-local"/> 
+              <input class="save-form" type="submit" value="SAVE" />
+          </form>
         </div>
       
         <div class="list">
-          <div class="list-item"  id="form-add4">
+          <form class="list-item" method="POST" id="form-add4">
             <input class="titlebox2" type="text" name="title" placeholder="Title"/>
             <textarea class="inp" type="text" name="description" placeholder="Descriptions"></textarea>
-              <input class="date" name="deadline" type="datetime-local" />              
-          </div>
+              <input class="date" name="deadline" type="datetime-local" />
+              <input class="save-form" type="submit" value="SAVE" />
+          </form>
         </div>
-      
-      
     </div>
-
   </div>
 
-  </div>
-</form>
+</div>
+
 
 </body>
 <script>

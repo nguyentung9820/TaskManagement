@@ -13,7 +13,6 @@ function route(app) {
     app.use('/logout', logoutRouter);
     app.use('/signup', signupRouter);
     app.use('/saveform', saveRouter);
-    app.use('/signin', loginRouter);
     app.use('/login', loginRouter);
     app.use('/news', newsRouter);
     app.use('/', homeRouter);

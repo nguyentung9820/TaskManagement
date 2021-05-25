@@ -10,7 +10,7 @@ class SignUpController {
         // res.send('ok')
     }
     index(req, res){
-        res.render('login')
+        res.render('signup', {layout: false})
     }
     
 }
