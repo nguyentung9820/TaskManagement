@@ -24,6 +24,7 @@
           <li><img class="avatar" src="/img/avatar.png" alt="change your avatar"></li>
         </ul>
       </nav>
+        {{!-- {{#each tables}} --}}
 
       <div class="toolbars">
         <div class="but">
@@ -33,20 +34,23 @@
           <button  class="ADD" id="show-form4">+</button>
         </div>
       </div>
+    
 
   <div class="app">
     <div class="lists">
       <div class="list">
         <form class="list-item" method="POST" action="/user/create" id="form-add1">
-          <input class="titlebox2" type="text" name="title" placeholder="Title"/>
-          <textarea class="inp" type="text" name="description" placeholder="Descriptions"></textarea>
-          <input class="date" name="deadline" type="datetime-local"/> 
+          <input type="hidden" name="table" value="table1"/>
+          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" />
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions" value="{{this.description}}"  ></textarea>
+          <input class="date" name="deadline" type="datetime-local" value="{{this.deadline}}" /> 
           <input class="save-form" type="submit" value="SAVE" />
         </form>
       </div>
 
       <div class="list">
-        <form class="list-item" method="POST"  id="form-add2">
+        <form class="list-item" method="POST" action="/user/create"  id="form-add2">
+          <input type="hidden" name="table" value="table2"/>
           <input class="titlebox2" type="text" name="title" placeholder="Title"/>
           <textarea class="inp" type="text" name="description" placeholder="Descriptions"></textarea>
             <input class="date" name="deadline" type="datetime-local"/>    
@@ -55,7 +59,8 @@
       </div>
       
         <div class="list">
-          <form class="list-item" method="POST"  id="form-add3">
+          <form class="list-item" method="POST" action="/user/create"  id="form-add3">
+            <input type="hidden" name="table" value="table3"/>
             <input class="titlebox2" type="text" name="title" placeholder="Title" />
             <textarea class="inp" type="text" name="description" placeholder="Descriptions"></textarea>
               <input class="date" name="deadline" type="datetime-local"/> 
@@ -64,7 +69,8 @@
         </div>
       
         <div class="list">
-          <form class="list-item" method="POST" id="form-add4">
+          <form class="list-item" method="POST"action="/user/create" id="form-add4">
+            <input type="hidden" name="table" value="table4"/>
             <input class="titlebox2" type="text" name="title" placeholder="Title"/>
             <textarea class="inp" type="text" name="description" placeholder="Descriptions"></textarea>
               <input class="date" name="deadline" type="datetime-local" />
@@ -75,7 +81,7 @@
   </div>
 
 </div>
-
+        {{!-- {{/each}} --}}
 
 </body>
 <script>

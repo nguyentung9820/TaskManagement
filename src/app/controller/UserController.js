@@ -7,7 +7,11 @@ class UserController {
 
     // [GET] /user
     index(req, res){
-        res.render('user/user',{layout: false});
+        res.render('user/user',{
+
+            layout: false
+        });
+        
     }
 
     // [GET] /user/info
@@ -37,15 +41,16 @@ class UserController {
         const tabless = new Table(req.body);
         tabless.save();
         res.redirect('/user')
-        // Table.find({})
+        // Table.find({table: req.body.table})
         // .then(tables => {
-        //     res.redirect('/user',{
-        //         tables: mutipleMongooseToObject(tables), 
-
+        //     res.render('user/user',{
+        //         tables:  mongooseToObject(tables), 
+        //         layout: false,
         //     }
         //     );
         // })
-        // .catch(next);
+        // .catch();
+        
     }
 
 }
