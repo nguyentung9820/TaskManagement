@@ -1,21 +1,25 @@
 const loginRouter = require('./login');
-const homeRouter = require('./home');
-const newsRouter = require('./news');
-const saveRouter = require('./saveform');
 const signupRouter = require('./signup');
 const logoutRouter = require('./logout');
 const userRouter = require('./user');
-const aboutusRouter = require('./aboutus')
+const siteRouter = require('./site');
+
+const authMiddleware = require('../middlewares/middleware');
+
 function route(app) {
 
-    app.use('/aboutus', aboutusRouter);
-    app.use('/user', userRouter);
-    app.use('/logout', logoutRouter);
-    app.use('/signup', signupRouter);
-    app.use('/saveform', saveRouter);
+    // Site: all url not have to login to render
+    app.use('/', siteRouter);
+
+    // Auth: Page signup and login
     app.use('/login', loginRouter);
-    app.use('/news', newsRouter);
-    app.use('/', homeRouter);
+    app.use('/signup', signupRouter);
+
+    // user: After login
+    app.use('/user',authMiddleware.requireAuth ,userRouter);
+
+    // user want to logout
+    app.use('/logout', logoutRouter);
     
 
 

@@ -13,7 +13,7 @@
       </label>
       <label class="logo">ScheduleX</label>
       <ul>
-        <li><a class="active" href="/news">Profile</a></li>
+        <li><a class="active" href="/user">Profile</a></li>
 		<li><a class="active" href="/logout">Log out</a></li>
 
       </ul>
@@ -25,7 +25,7 @@
 <br/>
 <h1 style="text-align: center;" >Edit your profile</h1>
     {{#each courses}}
-  <form action="/news?_method=PUT" method="POST">
+  <form action="/user/info?_method=PUT" method="POST">
     <label for="Username">Username</label>
     <input type="text" id="username" name="username" placeholder="Your username" value="{{this.username}}">
     <br/>

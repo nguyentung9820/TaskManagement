@@ -2,15 +2,17 @@ const Course = require("../models/Course");
 
 class SignUpController {
    
-    signup(req, res){
-        const course = new Course(req.body);
-        // res.send(course)
-        course.save();
-        res.redirect('/login')
-        // res.send('ok')
-    }
+    // [GET] /signup
     index(req, res){
         res.render('signup', {layout: false})
+    }
+
+    // [POST] /signup
+    signupPost(req, res){
+        const course = new Course(req.body);
+        course.save();
+        
+        res.redirect('/login')
     }
     
 }
