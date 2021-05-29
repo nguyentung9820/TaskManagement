@@ -22,7 +22,7 @@
           <li><a class="active" href="/logout">Log out</a></li>
         </ul>
         <ul>
-          <li><img class="avatar" src="/img/avatar.png" alt="change your avatar"></li>
+          <li><a href="/user"><img class="avatar" src="/img/avatar.png" alt="change your avatar"></a></li>
         </ul>
       </nav>
 
@@ -39,31 +39,31 @@
   <div class="app">
     <div class="lists">
       <div class="list">
-        <form class="list-item" method="POST" action="/user/create" id="form-add1">
-          <input type="hidden"  name="column1" value="column1"/>
-          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" />
-          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  >{{this.description}}</textarea>
+        <form class="list-item" method="POST" id="form-add1">
+          <input type="hidden" name="column1" value="column1" >
+          <input class="titlebox2" type="text" name="title" placeholder="Title"  />
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  ></textarea>
           <input class="date" name="deadline" type="datetime-local"  />
-          <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
+          <div class="date"><strong>Deadline:</strong></div>
           <input class="save-form" type="submit" value="SAVE" />
         </form>
         
-        {{#each tables}}
-        {{#if column1}}                
+                {{#each tables}}
+                {{#if column1}}
         <form class="list-item" method="POST" action="/user/edit-table" id="form-add1">
           <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
           <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
           <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
           <input class="save-form" type="submit" value="Edit" />
         </form>
-        {{/if}}
-        {{/each}}
+                {{/if}}
+                {{/each}}
 
       </div>
 
       <div class="list">
-       <form class="list-item" method="POST" action="/user/create" id="form-add2">
-          <input type="hidden" type="text" name="column2" value="column2"/>
+       <form class="list-item" method="POST"  id="form-add2">
+          <input type="hidden" name="column2" value="column2" >
           <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" />
           <textarea class="inp" type="text" name="description" placeholder="Descriptions"  >{{this.description}}</textarea>
           <input class="date" name="deadline" type="datetime-local"  />
@@ -71,59 +71,62 @@
           <input class="save-form" type="submit" value="SAVE" />
         </form>
         
-        {{#each tables}}
-        {{#if column2}}                
-        <form class="list-item" method="POST" action="/user/create" id="form-add2">
-          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" />
-          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  >{{this.description}}</textarea>
+                {{#each tables}}
+                
+                {{#if column2}}
+
+         <form class="list-item" method="POST" action="/user/edit-table" id="form-add2">
+          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
           <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
-          <input class="save-form" type="submit" value="SAVE" />
+          <input class="save-form" type="submit" value="Edit" />
         </form>
-        {{/if}}
-        {{/each}}
+                {{/if}}
+                {{/each}}
       </div>
       
         <div class="list">
-          <form class="list-item" method="POST" action="/user/create" id="form-add3">
-          <input type="hidden" type="text" name="column3" value="column3"/>
+          <form class="list-item" method="POST"  id="form-add3">
+          <input type="hidden" name="column3" value="column3" >
           <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" />
           <textarea class="inp" type="text" name="description" placeholder="Descriptions"  >{{this.description}}</textarea>
           <input class="date" name="deadline" type="datetime-local"  />
           <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
           <input class="save-form" type="submit" value="SAVE" />
         </form>
-        {{#each tables}}
-        {{#if column3}}                
-
-        <form class="list-item" method="POST" action="/user/create" id="form-add3">
-          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" />
-          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  >{{this.description}}</textarea>
+        
+                {{#each tables}}
+                {{#if column3}}
+         <form class="list-item" method="POST" action="/user/edit-table" id="form-add3">
+          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
           <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
-          <input class="save-form" type="submit" value="SAVE" />
-        </form>
-        {{/if}}
-        {{/each}}
+          <input class="save-form" type="submit" value="Edit" />
+        </form> 
+                {{/if}}
+                {{/each}}
         </div>
       
         <div class="list">
-          <form class="list-item" method="POST" action="/user/create" id="form-add4">
-          <input type="hidden" type="text" name="column4" value="column4"/>
+          <form class="list-item" method="POST" id="form-add4">
+          <input type="hidden" name="column4" value="column4" >
           <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" />
           <textarea class="inp" type="text" name="description" placeholder="Descriptions"  >{{this.description}}</textarea>
           <input class="date" name="deadline" type="datetime-local"  />
           <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
           <input class="save-form" type="submit" value="SAVE" />
         </form>
-        {{#each tables}}
-        {{#if column4}}
-        <form class="list-item" method="POST" action="/user/create" id="form-add4">
-          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" />
-          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  >{{this.description}}</textarea>
+        
+                {{#each tables}}
+                {{#if column4}}
+         <form class="list-item" method="POST" action="/user/edit-table" id="form-add4">
+          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
           <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
-          <input class="save-form" type="submit" value="SAVE" />
+          <input class="save-form" type="submit" value="Edit" />
         </form>
-          {{/if}}      
-        {{/each}}
+                {{/if}}
+                {{/each}}
         </div>
     </div>
   </div>

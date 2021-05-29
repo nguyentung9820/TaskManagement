@@ -4,6 +4,7 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
+    
   }
   body{
     font-family: montserrat;
@@ -207,6 +208,7 @@
     height: 1.5rem;
     font-size: medium;
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
   }
 
   
@@ -215,7 +217,7 @@
     background: #e8eff5;
     border: hidden;
     font-size: large;
-    border-radius: 10px;
+    border-radius: none;
     width: 100%;
   }
 
@@ -254,6 +256,7 @@
     border-radius: 5px;
     text-align: left;
     padding-left: 10px;
+    padding-right: 10px;
     font-size: 20px;
     color:rgb(141, 141, 235);
     background-color: white;

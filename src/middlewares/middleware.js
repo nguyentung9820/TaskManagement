@@ -16,6 +16,21 @@ class middlewares{
         next();
         
     };
+    async checkIdTeam(req, res, next){
+        const auth = req.cookies['oreo'];
+        const info = await Course.findOne({_id: auth});
+        if(!info.idTeam){
+            res.redirect('/user');
+            return;
+        }
+        if(info.idTeam == null){
+            res.redirect('/user');
+            return;
+        }
+        res.locals.idTeam = info.idTeam;
+
+        next();
+    }
 }
 
 

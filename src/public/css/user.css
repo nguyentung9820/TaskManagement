@@ -180,13 +180,14 @@ header {
   width: 100%;
   height: 1.5rem;
   font-size: medium;
-  text-align: center; }
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif; }
 
 .date {
   background: #e8eff5;
   border: hidden;
   font-size: large;
-  border-radius: 10px;
+  border-radius: none;
   width: 100%; }
 
 .save-form {
@@ -219,6 +220,7 @@ header {
   border-radius: 5px;
   text-align: left;
   padding-left: 10px;
+  padding-right: 10px;
   font-size: 20px;
   color: #8d8deb;
   background-color: white; }

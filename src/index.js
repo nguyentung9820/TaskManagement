@@ -25,12 +25,14 @@ app.use(express.urlencoded());
 // Template engine
 app.engine('hbs', handlebars({
     extname: '.hbs'
+    
 }));
 app.set('view engine','hbs');
 
 //config path
 app.set('views', path.join(__dirname, 'resources','views'));
 // console.log('PATH', path.join(__dirname, 'views'));
+
 
 route(app);
 app.listen(port, () => console.log(`Connect http://localhost:${port}`));
