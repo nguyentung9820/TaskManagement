@@ -28,7 +28,7 @@
 
       <div class="toolbars">
         <div class="but">
-          <button  class="ADD" id="show-form1">+</button>
+          <button  class="ADD" id="show-form1" onclick="myFunction()">+</button>
           <button  class="ADD" id="show-form2">+</button>
           <button  class="ADD" id="show-form3">+</button>
           <button  class="ADD" id="show-form4">+</button>
@@ -139,55 +139,15 @@
 
 </body>
 <script>
+  function myFunction() {      
+  var x = document.getElementById("form-add1");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
   
-  $(document).ready(function () {
-      $("#form-add1").hide();
-      $("#form-add2").hide();
-      $("#form-add3").hide();
-      $("#form-add4").hide();
-      var countClick1 = 0;
-      var countClick2 = 0;
-      var countClick3 = 0;
-      var countClick4 = 0;
-
-
-      $("#show-form1").click(function () {
-        if(countClick1%2 == 0) {
-          $("#form-add1").show();
-          countClick1++;
-        } else {
-          $("#form-add1").hide();
-          countClick1++;
-        }
-      });
-      $("#show-form2").click(function () {
-        if(countClick2%2 == 0) {
-          $("#form-add2").show();
-          countClick2++;
-        } else {
-          $("#form-add2").hide();
-          countClick2++;
-        }
-      });
-      $("#show-form3").click(function () {
-        if(countClick3%2 == 0) {
-          $("#form-add3").show();
-          countClick3++;
-        } else {
-          $("#form-add3").hide();
-          countClick3++;
-        }
-      });
-      $("#show-form4").click(function () {
-        if(countClick4%2 == 0) {
-          $("#form-add4").show();
-          countClick4++;
-        } else {
-          $("#form-add4").hide();
-          countClick4++;
-        }
-      });
-    });
 </script>
 
 </html>
