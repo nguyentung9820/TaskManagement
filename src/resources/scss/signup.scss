@@ -1,154 +1,210 @@
-body, html {
-    height: 100%;
-    margin: 0;
+* {
     padding: 0;
-}
-
-body {
-    background: #F9FAFC;
-    color: #3c434a;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-    font-size: 13px;
-    line-height: 1.4;
-}
-
-div {
-    display: block;
-}
-
-.home {
-    background-color: rgb(108, 134, 206);
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Cambria;
+  }
+  
+  nav {
+    background: #1976d2;
     height: 80px;
-    align-items: center;
-    display: flex;
-}
-
-.logo {
+    width: 100%;
+  }
+  
+  label.logo {
     color: white;
     font-size: 45px;
     line-height: 80px;
     padding: 0 100px;
     font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.choose {
-    position: absolute;
-    right: 50px;
-}
-
-.button {
-    background-color: rgb(82, 93, 194);
-   color: #fff;
-   padding: 7px 13px;
-   border-radius: 3px;
-   border: 1px solid #2271b1;
-   cursor: pointer;
-   font-size: 20px;
-   margin-left:15px;
-   font-family: initial;
-   text-decoration:none;
-   text-transform: uppercase;
-}
-
-.choose a.active {
-    background: rgb(82, 93, 194);
-    transition: .5s;
-}
-
-.choose a:hover {
-    background-color: #3c434a;
-    transition: .75s;
-}
-
-.login {
+  }
+  
+  
+  nav ul {
+    float: right;
+    margin-right: 20px;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  
+  nav ul li a {
+    background-color: #014f86;
+    color: #fff;
+    padding: 7px 13px;
+    border-radius: 3px;
+    border: 1px solid #2271b1;
+  }
+  
+  
+  a.active {
+    background: #014f86;
+    transition: 0.5s;
+  }
+  
+  a:hover {
+    background: #110933;
+  }
+  
+  .checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  #check {
+    display: none;
+  }
+  
+  @media (max-width: 952px) {
+    label.logo {
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li a {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 858px) {
+    .checkbtn {
+      display: block;
+    }
+    ul {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #2c3e50;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all 0.5s;
+    }
+    nav ul li {
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a {
+      font-size: 20px;
+    }
+    a.active {
+      background: none;
+      color: #0082e6;
+    }
+    a:hover {
+      background-color: #4d70e4;
+    }
+    #check:checked ~ ul {
+      left: 0;
+    }
+  }
+  
+  .login {
     width: 350px;
-    padding: 10px 0 0;
+    padding: 5% 0 0;
     margin: auto;
-}
-
-    .login * {
-        margin: 0;
-        padding: 0;
-    }
-
-    .login h1 {
-        text-align: center;
-    }
-
-        .login h1 a {
-            background-image: url('/img/trello-logo-blue.png');
-            background-repeat: no-repeat;
-            background-size: 150px;
-            height: 85px;
-            width: 150px;
-            display: block;
-            margin: 0 auto 10px;
-            text-indent: -9999px;
-        }
-
-input {
+  }
+  
+  
+  .login * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .login h1 {
+    text-align: center;
+  }
+  
+  .login h1 a {
+    background-image: url('/img/trello-logo-blue.png');
+    background-repeat: no-repeat;
+    background-size: 150px;
+    height: 85px;
+    width: 150px;
+    display: block;
+    margin: 0 auto 10px;
+    text-indent: -9999px;
+  }
+  
+  input {
     font-family: inherit;
-}
-
-    input[type=text], input[type=password], input[type=email] {
-        font-size: 16px;
-        background-color: #FAFBFC;
-        width: 96%;
-        padding: .5em 0 0.5em .5em;
-        border-radius: 4px;
-        border: 1px solid #808080;
-        margin-bottom: 16px;
-        line-height: 1.333333333;
-    }
-
-    input[type=checkbox] {
-        height: 30px;
-        width: 25px;
-        border: 1px solid #808080;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    input[type=submit] {
-        background-color: #2271b1;
-        color: #fff;
-        padding: 10px 14px 10px;
-        border-radius: 4px;
-        border: 1px solid #2271b1;
-        cursor: pointer;
-        margin-bottom: 10px;
-    }
-
-        input[type=submit]:hover {
-            opacity: 0.8;
-        }
-
-    input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
-        outline: none !important;
-        border: 1px solid blue;
-        background-color: #fff;
-    }
-
-.form {
+  }
+  
+  input[type='text'],
+  input[type='password'],
+  input[type='email'] {
+    font-size: 16px;
+    background-color: #fafbfc;
+    width: 96%;
+    padding: 0.5em 0 0.5em 0.5em;
+    border-radius: 4px;
+    border: 1px solid #808080;
+    margin-bottom: 16px;
+    line-height: 1.333333333;
+  }
+  
+  input[type='checkbox'] {
+    height: 30px;
+    width: 25px;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type='submit'] {
+    background-color: #2271b1;
+    color: #fff;
+    padding: 10px 14px 10px;
+    border-radius: 4px;
+    border: 1px solid #2271b1;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  input[type='submit']:hover {
+    opacity: 0.8;
+  }
+  
+  input[type='text']:focus,
+  input[type='email']:focus,
+  input[type='password']:focus {
+    outline: none !important;
+    border: 1px solid blue;
+    background-color: #fff;
+  }
+  
+  .form {
     background-color: #fff;
     padding: 26px 24px 46px;
     border: 1px solid #808080;
     overflow: hidden;
-}
-
-    .form label {
-        font-size: 14px;
-        margin-bottom: 5px;
-        display: inline-block;
-    }
-
-.remember-acc {
+  }
+  
+  .form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+  
+  .remember-acc {
     float: left;
     margin-right: 30px;
-}
-
-.back-ground {
+  }
+  
+  .back-ground {
     z-index: -900;
     height: 100vh;
     width: 100%;
@@ -156,43 +212,44 @@ input {
     top: 0px;
     left: 0px;
     overflow: hidden;
-}
-
-    .back-ground .left-bg {
-        background-image: url('/img/background_left.PNG');
-        background-repeat: no-repeat;
-        position: absolute;
-        background-size: 400px;
-        width: 400px;
-        height: 370px;
-        bottom: 0;
-        left: 0;
-    }
-
-    .back-ground .right-bg {
-        background-image: url('/img/background_right.PNG');
-        background-repeat: no-repeat;
-        position: absolute;
-        background-size: 400px;
-        width: 400px;
-        height: 305px;
-        bottom: 0;
-        right: 0;
-    }
-
-.nav {
+  }
+  
+  .back-ground .left-bg {
+    background-image: url('/img/background_left.PNG');
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: 400px;
+    width: 400px;
+    height: 370px;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .back-ground .right-bg {
+    background-image: url('/img/background_right.PNG');
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: 400px;
+    width: 400px;
+    height: 305px;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .nav {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
     font-size: 14px;
-}
-
-    .nav a {
-        text-decoration: none;
-    }
-
-        .nav a:hover {
-            text-decoration: none;
-            color: red;
-        }
+  }
+  
+  .nav a {
+    text-decoration: none;
+  }
+  
+  .nav a:hover {
+    text-decoration: none;
+    color: red;
+  }
+  
