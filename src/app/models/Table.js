@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-// const ObjectId = Schema.ObjectId;
 
 const Table = new Schema({
     id: { type: String},
@@ -14,9 +13,9 @@ const Table = new Schema({
     column2: { type: String},
     column3: { type: String},
     column4: { type: String},
+    table:{type: String},
+    Idtable:{type: String}
 });
-Table.virtual('Idtable').get(function(){
-    return this._id;
-});
+
 
 module.exports = mongoose.model('Table', Table);
