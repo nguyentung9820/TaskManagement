@@ -16,8 +16,8 @@ function route(app) {
     app.use('/signup', signupRouter);
 
     // user: After login
-    app.use('/user',authMiddleware.requireAuth ,userRouter);
-
+    app.use('/user',authMiddleware.requireAuth,userRouter);
+    
     // user want to logout
     app.use('/logout', logoutRouter);
     
