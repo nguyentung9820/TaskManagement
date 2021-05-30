@@ -27,9 +27,8 @@ body {
 .buttonlogin {
   border-radius: 4px;
   padding: 10px 24px;
-  background-color: #4c8baf;
-  border: 2px solid #4c82af;
-  font-size: 1rem; }
+  font-size: 1rem;
+  border: none; }
 
 .buttonlogin:hover {
-  background: #342e8b; }
+  background: #acb6cc; }
