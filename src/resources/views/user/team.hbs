@@ -50,7 +50,8 @@
         
                 {{#each tables}}
                 {{#if column1}}
-        <form class="list-item" method="POST" action="/user/edit-table" id="form-add1">
+        <form class="list-item" method="POST" action="/user/edit-table-team" id="form-add1">
+          <input type="hidden" name="Idtable" value="{{this._id}}">
           <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
           <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
           <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
@@ -75,7 +76,8 @@
                 
                 {{#if column2}}
 
-         <form class="list-item" method="POST" action="/user/edit-table" id="form-add2">
+         <form class="list-item" method="POST" action="/user/edit-table-team" id="form-add2">
+          <input type="hidden" name="Idtable" value="{{this._id}}">
           <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
           <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
           <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
@@ -97,7 +99,8 @@
         
                 {{#each tables}}
                 {{#if column3}}
-         <form class="list-item" method="POST" action="/user/edit-table" id="form-add3">
+         <form class="list-item" method="POST" action="/user/edit-table-team" id="form-add3">
+          <input type="hidden" name="Idtable" value="{{this._id}}">
           <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
           <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
           <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
@@ -119,7 +122,8 @@
         
                 {{#each tables}}
                 {{#if column4}}
-         <form class="list-item" method="POST" action="/user/edit-table" id="form-add4">
+         <form class="list-item" method="POST" action="/user/edit-table-team" id="form-add4">
+          <input type="hidden" name="Idtable" value="{{this._id}}">
           <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
           <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
           <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>

@@ -79,23 +79,7 @@ class UserController {
         tables.save();
         res.redirect('/user/team')
     }
-    // [POST] /user/edit-table
-    edit(req, res , next){
-        Table.find({column: 'column1'})
-        .then(tables => {
-            res.render('user/table', { 
-                tables: mutipleMongooseToObject(tables), layout: false 
-            });
-        })
-        .catch(next);
-    }
-    // [PUT] /user/edit-table
-    tableEdit(req, res, next){
-        Table.updateOne({column: 'column1'}, req.body)
-        .then(() => res.redirect('/user'))
-        .catch(next)
-    }
-
+    
     
 }
 
