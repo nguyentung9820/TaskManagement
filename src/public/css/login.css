@@ -20,11 +20,7 @@ nav {
   line-height: 80px;
   padding: 0 100px;
   font-weight: bold;
-<<<<<<< HEAD
 }
-=======
-  font-family: 'Times New Roman', Times, serif; }
->>>>>>> c5534f1163b07a53d09f7dfb6a902ef66b568c79
 
 nav ul {
   float: right;
@@ -43,16 +39,7 @@ nav ul li a {
   padding: 7px 13px;
   border-radius: 3px;
   border: 1px solid #2271b1;
-<<<<<<< HEAD
 }
-=======
-  cursor: pointer;
-  font-size: 20px;
-  margin-left: 15px;
-  font-family: initial;
-  text-decoration: none;
-  text-transform: uppercase; }
->>>>>>> c5534f1163b07a53d09f7dfb6a902ef66b568c79
 
 a.active {
   background: #014f86;

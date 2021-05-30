@@ -9,11 +9,7 @@ body {
   font-family: Cambria; }
 
 nav {
-<<<<<<< HEAD
   background: #1976d2;
-=======
-  background-color: #6c86ce;
->>>>>>> c5534f1163b07a53d09f7dfb6a902ef66b568c79
   height: 80px;
   width: 100%; }
 
@@ -35,20 +31,12 @@ nav ul li {
   margin: 0 5px; }
 
 nav ul li a {
-<<<<<<< HEAD
   background-color: #014F86;
   color: #fff;
   padding: 10px 14px 10px;
   border-radius: 4px;
   border: 1px solid #2271b1;
   }
-=======
-  color: white;
-  font-size: 20px;
-  padding: 7px 13px;
-  border-radius: 3px;
-  text-transform: uppercase; }
->>>>>>> c5534f1163b07a53d09f7dfb6a902ef66b568c79
 
 a.active {
   background: #014F86;
