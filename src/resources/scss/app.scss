@@ -9,16 +9,21 @@
     font-family: montserrat;
   }
   nav{
+<<<<<<< HEAD
     background:#1976d2;
+=======
+    background-color: rgb(108, 134, 206);
+>>>>>>> c5534f1163b07a53d09f7dfb6a902ef66b568c79
     height: 80px;
     width: 100%;
   }
   label.logo{
     color: white;
-    font-size: 35px;
+    font-size: 45px;
     line-height: 80px;
     padding: 0 100px;
     font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
   }
   nav ul{
     float: right;
@@ -31,7 +36,7 @@
   }
   nav ul li a{
     color: white;
-    font-size: 17px;
+    font-size: 20px;
     padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;

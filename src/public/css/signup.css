@@ -22,7 +22,11 @@ label.logo {
   line-height: 80px;
   padding: 0 100px;
   font-weight: bold;
+<<<<<<< HEAD
 }
+=======
+  font-family: 'Times New Roman', Times, serif; }
+>>>>>>> c5534f1163b07a53d09f7dfb6a902ef66b568c79
 
 nav ul {
   float: right;
@@ -38,10 +42,19 @@ nav ul li {
 nav ul li a {
   background-color: #014f86;
   color: #fff;
-  padding: 10px 14px 10px;
-  border-radius: 4px;
+  padding: 7px 13px;
+  border-radius: 3px;
   border: 1px solid #2271b1;
+<<<<<<< HEAD
 }
+=======
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 15px;
+  font-family: initial;
+  text-decoration: none;
+  text-transform: uppercase; }
+>>>>>>> c5534f1163b07a53d09f7dfb6a902ef66b568c79
 
 a.active {
   background: #014f86;
@@ -112,9 +125,14 @@ a:hover {
 
 .login {
   width: 350px;
+<<<<<<< HEAD
   padding: 5% 0 0;
   margin: auto;
 }
+=======
+  padding: 10px 0 0;
+  margin: auto; }
+>>>>>>> c5534f1163b07a53d09f7dfb6a902ef66b568c79
 
 .login * {
   margin: 0;

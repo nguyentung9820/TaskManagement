@@ -25,10 +25,11 @@ div {
 
 .logo {
    color: white;
-   font-size: 45px;
-   padding-left: 80px;
-   font-weight: bold;
-   font-family: font-family;
+    font-size: 45px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
 }
 .choose {
    position: absolute;
@@ -38,15 +39,18 @@ div {
 .button {
    background-color: rgb(82, 93, 194);
    color: #fff;
-   padding: 10px 14px 10px;
-   border-radius: 4px;
+   padding: 7px 13px;
+   border-radius: 3px;
    border: 1px solid #2271b1;
    cursor: pointer;
-   font-size: large;
+   font-size: 20px;
    margin-left:15px;
    font-family: initial;
    text-decoration:none;
+   text-transform: uppercase;
+
 }
+
 .choose a.active {
    background: rgb(82, 93, 194);
    transition: .5s;
