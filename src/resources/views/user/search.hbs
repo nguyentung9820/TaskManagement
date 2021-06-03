@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/news.css"/>
+    <link rel="stylesheet" href="/css/user.css" />
+    <link rel="stylesheet" href="/css/modal.css"/>
+    <title>Find your teamates</title>
+</head>
+<body>
+   
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">ScheduleX</label>
+      <ul>
+        <li><a class="active" id="search2" onclick="search1()" ><img class="search2" src="/img/search2.png" /></a></li>
+        <li><a class="active" href="/user">Profile</a></li>
+		    <li><a class="active" href="/logout">Log out</a></li>
+
+      </ul>
+      <ul>
+        <li><a href="/user"><img class="avatar" src="/img/avatar.png" alt="change your avatar"></a></li>
+      </ul>
+    </nav>
+<div>
+<br/>
+<h1 style="text-align: center;" >Find your teamates</h1>
+  <form action="/user/info?_method=PUT" method="POST">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for teammates.." title="Type in a name">
+        {{#each courses}}
+        {{#if idTeam}}
+        <ul id="myUL">
+            <li><a href="#">{{this.username}}</a></li>
+        </ul>
+        {{/if}}
+        {{/each}}
+        
+    <br/>
+  </form>
+</div>
+</body>
+<script>
+ 
+  function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+</html>

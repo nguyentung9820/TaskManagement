@@ -43,7 +43,7 @@
     background:rgb(55, 71, 163);
     transition: .5s;
   }
-  a:hover{
+  .active:hover{
       background:rgb(116, 109, 206);
   }
   .checkbtn{
@@ -261,19 +261,7 @@
     background-color: white;
     
   }
-  // #show-form1{
-  //   margin-left: 2rem;
-  // }
-  // #show-form2{
-  //   margin-left: 21rem;
-  // }
-
-  // #show-form3{
-  //   margin-left:22rem;
-  // }
-  // #show-form4{
-  //   margin-left: 21rem;
-  // }
+  
   .ADD:hover{
     background-color: #e8eff5;
     

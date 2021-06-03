@@ -10,7 +10,7 @@ const Table = new Schema({
     deadline: { type: Date },
     createdAt: { type: Date, default: Date.now},
     updateAt: { type: Date, default: Date.now },
-    
+    deleted: { type: Boolean, default: false},
     column1: { type: String},
     column2: { type: String},
     column3: { type: String},

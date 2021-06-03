@@ -9,7 +9,7 @@ class UserController {
    async index(req, res){
 
         const auth = req.cookies['oreo'];
-        Table.find({id: auth })
+        Table.find({id: auth, deleted: false })
         .then(tables => {
             res.render('user/user',{
                 tables:  mutipleMongooseToObject(tables), 
@@ -22,9 +22,8 @@ class UserController {
     }
 
     // [GET] /user/info
-    info(req, res, next){
+    async info(req, res, next){
         const auth = req.cookies['oreo'];
-        
         Course.find({_id: auth})
         .then(courses => {
             res.render('user/info', { 
@@ -61,13 +60,13 @@ class UserController {
 
         console.log(info.idTeam);
         const codeIdTeam = info.idTeam;
-        
         Table.find({codeIdTeam: codeIdTeam})
+
         .then(tables => {
             res.render('user/team', {
                 tables: mutipleMongooseToObject(tables),
                 layout: false
-            });
+            })
         })
         .catch(next);
     }
@@ -80,7 +79,19 @@ class UserController {
         res.redirect('/user/team')
     }
     
-    
+    async search(req, res, next){
+        const auth = req.cookies['oreo'];
+        const info = await Course.findOne({_id: auth});
+        Course.find({idTeam: info.idTeam})
+        .then(courses => {
+            res.render('user/search', { 
+                courses: mutipleMongooseToObject(courses), 
+                layout: false 
+            });
+        })
+        .catch(next);
+        
+    }
 }
 
 

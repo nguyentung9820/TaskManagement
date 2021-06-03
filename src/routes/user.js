@@ -17,6 +17,8 @@ router.post('/team',authMiddleware.checkIdTeam ,userController.teamCreate);
 router.post('/edit-table',editController.editForm)
 router.put('/edit-table' , editController.tableEdit)
 
-router.post('/edit-table-team', editController.editFormTeam)
-router.put('/edit-table-team', editController.editTeamTable)
+router.get('/search',authMiddleware.checkIdTeam, userController.search);
+
+router.post('/edit-table-team',authMiddleware.checkIdTeam, editController.editFormTeam)
+router.put('/edit-table-team',authMiddleware.checkIdTeam, editController.editTeamTable)
 module.exports = router;

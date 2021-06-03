@@ -3,9 +3,13 @@
 <head>
     <link rel="stylesheet" href="/css/news.css"/>
     <link rel="stylesheet" href="/css/user.css" />
+      <link rel="stylesheet" href="/css/modal.css" />
+
     <title>Your Information</title>
 </head>
 <body>
+   
+
     <nav>
       <input type="checkbox" id="check">
       <label for="check" class="checkbtn">
@@ -13,8 +17,9 @@
       </label>
       <label class="logo">ScheduleX</label>
       <ul>
+        <li><a class="active" id="search2" href="/user/search" ><img class="search2" src="/img/search2.png" /></a></li>
         <li><a class="active" href="/user">Profile</a></li>
-		<li><a class="active" href="/logout">Log out</a></li>
+		    <li><a class="active" href="/logout">Log out</a></li>
 
       </ul>
       <ul>
@@ -47,4 +52,5 @@
 </div>
     {{/each}}
 </body>
+
 </html>

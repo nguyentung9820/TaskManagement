@@ -6,10 +6,30 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/user.css" />
+  <link rel="stylesheet" href="/css/modal.css" />
+  
 </head>
 
-
 <body>
+<!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+          {{#each tables}}
+          {{#if column1}} 
+        <div class="list-item" >
+          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}"/>
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  ></textarea>
+          <input class="date" name="deadline" type="datetime-local"  />
+        </div>
+        {{/if}}
+        {{/each}}
+      </div>
+    </div>
+<!-- The Modal -->
+
+
     <div class="contain-all">
       <nav>
           <input type="checkbox" id="check">
@@ -28,104 +48,92 @@
       </nav>
 
       <div class="toolbars">
-          <button  class="ADD" id="show-form1">+</button>
-          <button  class="ADD" id="show-form2">+</button>
-          <button  class="ADD" id="show-form3">+</button>
-          <button  class="ADD" id="show-form4">+</button>
+        <button class="ADD" id="show-form1" onclick="myFunction1()">+</button>
+        <button class="ADD" id="show-form2" onclick="myFunction2()">+</button>
+        <button class="ADD" id="show-form3" onclick="myFunction3()">+</button>
+        <button class="ADD" id="show-form4" onclick="myFunction4()">+</button>
       </div>
     
 
   <div class="app">
     <div class="lists">
       <div class="list">
-        <form class="list-item" method="POST" action="/user/create" id="form-add1">
-          <input type="hidden"  name="column1" value="column1"/>
-          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" />
-          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  >{{this.description}}</textarea>
+        <form class="list-item" method="POST" action="/user/create" id="form-add1" style="display: none;">
+          <input type="hidden" type="text" name="column1" value="column1"/>
+          <input class="titlebox2" type="text" name="title" placeholder="Title"  />
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  ></textarea>
           <input class="date" name="deadline" type="datetime-local"  />
-          <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
           <input class="save-form" type="submit" value="SAVE" />
-        </form>
+        </form>        
         
         {{#each tables}}
-        {{#if column1}}                
-        <form class="list-item" method="POST" action="/user/edit-table" id="form-add1">
-          <input type="hidden" name="Idtable" value="{{this._id}}">
-          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
-          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
-          <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
-          <input class="save-form" type="submit" value="Edit" />
-        </form>
+        {{#if column1}} 
+        <div class="list-item">
+          <button class="titlebox2" onclick="addtitle()" >{{this.title}}</button>               
+          <form  method="POST" action="/user/edit-table" >
+            <input type="hidden" name="Idtable" value="{{this._id}}">
+            <input class="save-form" type="submit" value="SAVE" />
+          </form>
+        </div>
+        
         {{/if}}
         {{/each}}
 
       </div>
 
       <div class="list">
-       <form class="list-item" method="POST" action="/user/create" id="form-add2">
+       <form class="list-item" method="POST" action="/user/create" id="form-add2" style="display: none;">
           <input type="hidden" type="text" name="column2" value="column2"/>
-          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" />
-          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  >{{this.description}}</textarea>
+          <input class="titlebox2" type="text" name="title" placeholder="Title"  />
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  ></textarea>
           <input class="date" name="deadline" type="datetime-local"  />
-          <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
           <input class="save-form" type="submit" value="SAVE" />
         </form>
         
         {{#each tables}}
         {{#if column2}}                
-        <form class="list-item" method="POST" action="/user/edit-table" id="form-add2">
+        <form class="list-item" method="POST" action="/user/edit-table" >
           <input type="hidden" name="Idtable" value="{{this._id}}">
-          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
-          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
-          <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
-          <input class="save-form" type="submit" value="Edit" />
+          <button class="titlebox2" type="submit"  >{{this.title}}</button>
         </form>
         {{/if}}
         {{/each}}
       </div>
       
         <div class="list">
-          <form class="list-item" method="POST" action="/user/create" id="form-add3">
+        <form class="list-item" method="POST" action="/user/create" id="form-add3" style="display: none;">
           <input type="hidden" type="text" name="column3" value="column3"/>
-          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" />
-          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  >{{this.description}}</textarea>
+          <input class="titlebox2" type="text" name="title" placeholder="Title"/>
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  ></textarea>
           <input class="date" name="deadline" type="datetime-local"  />
-          <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
           <input class="save-form" type="submit" value="SAVE" />
         </form>
         {{#each tables}}
         {{#if column3}}                
 
-        <form class="list-item" method="POST" action="/user/edit-table" id="form-add3">
+        <form class="list-item" method="POST" action="/user/edit-table" >
           <input type="hidden" name="Idtable" value="{{this._id}}">
-          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
-          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
-          <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
-          <input class="save-form" type="submit" value="Edit" />
+          <button class="titlebox2" type="submit"  >{{this.title}}</button>
         </form>
         {{/if}}
         {{/each}}
         </div>
       
         <div class="list">
-          <form class="list-item" method="POST" action="/user/create" id="form-add4">
+          <form class="list-item" method="POST" action="/user/create" id="form-add4" style="display: none;">
           <input type="hidden" type="text" name="column4" value="column4"/>
-          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" />
-          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  >{{this.description}}</textarea>
+          <input class="titlebox2" type="text" name="title" placeholder="Title"  />
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  ></textarea>
           <input class="date" name="deadline" type="datetime-local"  />
-          <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
           <input class="save-form" type="submit" value="SAVE" />
         </form>
         {{#each tables}}
         {{#if column4}}
-        <form class="list-item" method="POST" action="/user/edit-table" id="form-add4">
+        <form class="list-item" method="POST" action="/user/edit-table" >
           <input type="hidden" name="Idtable" value="{{this._id}}">
-          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
-          <textarea class="inp" type="text" name="description" placeholder="Descriptions" readonly >{{this.description}}</textarea>
-          <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
-          <input class="save-form" type="submit" value="Edit" />
+          <button class="titlebox2" type="submit"  >{{this.title}}</button>
         </form>
-          {{/if}}      
+        {{/if}}      
         {{/each}}
         </div>
     </div>
@@ -135,55 +143,64 @@
 
 </body>
 <script>
+  // Get the modal
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+
+function addtitle(){
+    modal.style.display = "block";
+
+}
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
   
-  $(document).ready(function () {
-      $("#form-add1").hide();
-      $("#form-add2").hide();
-      $("#form-add3").hide();
-      $("#form-add4").hide();
-      var countClick1 = 0;
-      var countClick2 = 0;
-      var countClick3 = 0;
-      var countClick4 = 0;
+</script>
+<script>
+  
+  function myFunction1() {
+    var formAdd1 = document.getElementById('form-add1');
+    if (formAdd1.style.display === "none") {
+      formAdd1.style = "";
+    } else {
+      formAdd1.style.display = "none";
+    }
+  }
 
+  function myFunction2() {
+    var formAdd2 = document.getElementById('form-add2');
+    if (formAdd2.style.display === "none") {
+      formAdd2.style = "";
+    } else {
+      formAdd2.style.display = "none";
+    }
+  }
 
-      $("#show-form1").click(function () {
-        if(countClick1%2 == 0) {
-          $("#form-add1").show();
-          countClick1++;
-        } else {
-          $("#form-add1").hide();
-          countClick1++;
-        }
-      });
-      $("#show-form2").click(function () {
-        if(countClick2%2 == 0) {
-          $("#form-add2").show();
-          countClick2++;
-        } else {
-          $("#form-add2").hide();
-          countClick2++;
-        }
-      });
-      $("#show-form3").click(function () {
-        if(countClick3%2 == 0) {
-          $("#form-add3").show();
-          countClick3++;
-        } else {
-          $("#form-add3").hide();
-          countClick3++;
-        }
-      });
-      $("#show-form4").click(function () {
-        if(countClick4%2 == 0) {
-          $("#form-add4").show();
-          countClick4++;
-        } else {
-          $("#form-add4").hide();
-          countClick4++;
-        }
-      });
-    });
+  function myFunction3() {
+    var formAdd3 = document.getElementById('form-add3');
+    if (formAdd3.style.display === "none") {
+      formAdd3.style = "";
+    } else {
+      formAdd3.style.display = "none";
+    }
+  }
+
+  function myFunction4() {
+    var formAdd4 = document.getElementById('form-add4');
+    if (formAdd4.style.display === "none") {
+      formAdd4.style = "";
+    } else {
+      formAdd4.style.display = "none";
+    }
+  }
 </script>
 
 </html>

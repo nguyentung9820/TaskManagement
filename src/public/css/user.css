@@ -42,7 +42,7 @@ a.active {
   background: #3747a3;
   transition: .5s; }
 
-a:hover {
+.active:hover {
   background: #746dce; }
 
 .checkbtn {
