@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <title>Working with team</title>
+  <title>Team</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,12 +50,18 @@
         
                 {{#each tables}}
                 {{#if column1}}
+          <form id="{{this._id}}" action="/user/team?_method=PUT" method="POST">
+            <input type="hidden" name="Idtable" value="{{this._id}}">
+          </form>
+                
         <form class="list-item" method="POST" action="/user/edit-table-team" id="form-add1">
           <input type="hidden" name="Idtable" value="{{this._id}}">
           <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
           <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
           <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
           <input class="save-form" type="submit" value="Edit" />
+          <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
+
         </form>
                 {{/if}}
                 {{/each}}
@@ -70,11 +76,15 @@
           <input class="date" name="deadline" type="datetime-local"  />
           <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
           <input class="save-form" type="submit" value="SAVE" />
+          
         </form>
         
                 {{#each tables}}
                 
                 {{#if column2}}
+          <form id="{{this._id}}" action="/user/team?_method=PUT" method="POST">
+            <input type="hidden" name="Idtable" value="{{this._id}}">
+          </form>
 
          <form class="list-item" method="POST" action="/user/edit-table-team" id="form-add2" >
           <input type="hidden" name="Idtable" value="{{this._id}}">
@@ -82,6 +92,8 @@
           <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
           <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
           <input class="save-form" type="submit" value="Edit" />
+          <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
+
         </form>
                 {{/if}}
                 {{/each}}
@@ -99,12 +111,18 @@
         
                 {{#each tables}}
                 {{#if column3}}
+          <form id="{{this._id}}" action="/user/team?_method=PUT" method="POST">
+            <input type="hidden" name="Idtable" value="{{this._id}}">
+          </form>
+
          <form class="list-item" method="POST" action="/user/edit-table-team" id="form-add3">
           <input type="hidden" name="Idtable" value="{{this._id}}">
           <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
           <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
           <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
           <input class="save-form" type="submit" value="Edit" />
+          <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
+
         </form> 
                 {{/if}}
                 {{/each}}
@@ -122,12 +140,18 @@
         
                 {{#each tables}}
                 {{#if column4}}
+          <form id="{{this._id}}" action="/user/team?_method=PUT" method="POST">
+            <input type="hidden" name="Idtable" value="{{this._id}}">
+          </form>
+
          <form class="list-item" method="POST" action="/user/edit-table-team" id="form-add4">
           <input type="hidden" name="Idtable" value="{{this._id}}">
           <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
           <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
           <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
           <input class="save-form" type="submit" value="Edit" />
+          <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
+
         </form>
                 {{/if}}
                 {{/each}}

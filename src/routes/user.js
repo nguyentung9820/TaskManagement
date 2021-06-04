@@ -7,12 +7,14 @@ const editController = require('../app/controller/EditController');
 
 router.get('/', userController.index);
 router.post('/create', userController.create);
+router.put('/', userController.deleteFormUser);
 
 router.get('/info', userController.info);
 router.put('/info', userController.infoEdit);
 
 router.get('/team', authMiddleware.checkIdTeam,userController.team);
 router.post('/team',authMiddleware.checkIdTeam ,userController.teamCreate);
+router.put('/team', userController.deleteFormTeam);
 
 router.post('/edit-table',editController.editForm)
 router.put('/edit-table' , editController.tableEdit)

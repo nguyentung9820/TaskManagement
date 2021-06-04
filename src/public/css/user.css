@@ -172,6 +172,9 @@ header {
   font-size: large;
   text-align: center; }
 
+.titlebox2:hover {
+  background-color: #c9b898; }
+
 .titlebox2 {
   border: hidden;
   background: #e2dac7;
@@ -189,11 +192,14 @@ header {
   border-radius: none;
   width: 100%; }
 
+.edit-btn {
+  display: flex; }
+
 .save-form {
   background-color: seashell;
   width: 100%;
-  height: 1rem;
-  border: hidden;
+  height: 1.5rem;
+  border: solid 1px wheat;
   border-radius: 20px;
   text-align: center;
   font-family: 'Times New Roman', Times, serif; }

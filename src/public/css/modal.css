@@ -60,14 +60,14 @@
   width: 80%; }
 
 /* The Close Button */
-.close {
+.close, .close2, .close3, .close4, .close1 {
   color: #aaaaaa;
   float: right;
   font-size: 28px;
   font-weight: bold; }
 
-.close:hover,
-.close:focus {
+.close, .close2, .close3, .close4, .close1:hover,
+.close, .close2, .close3, .close4, .close1:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer; }
@@ -79,3 +79,23 @@
 
 #search2 {
   border-radius: 100%; }
+
+.alert-del {
+  display: flex; }
+
+.del-but {
+  border: none;
+  background-color: #669cee;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-left: 1rem;
+  justify-content: center;
+  border-radius: 20px;
+  width: 300%;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif; }
+
+.del-but:hover {
+  background-color: brown; }

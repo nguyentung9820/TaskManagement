@@ -21,6 +21,16 @@ class UserController {
         
     }
 
+    deleteFormUser(req, res, next){
+        const idTable = req.body.Idtable;
+        console.log(req.body.Idtable);
+        req.body.deleted = true;
+
+        Table.updateOne({_id: idTable}, req.body)
+        .then(() => res.redirect('/user'))
+        .catch(next)
+    }
+
     // [GET] /user/info
     async info(req, res, next){
         const auth = req.cookies['oreo'];
@@ -60,7 +70,7 @@ class UserController {
 
         console.log(info.idTeam);
         const codeIdTeam = info.idTeam;
-        Table.find({codeIdTeam: codeIdTeam})
+        Table.find({codeIdTeam: codeIdTeam, deleted: false})
 
         .then(tables => {
             res.render('user/team', {
@@ -91,6 +101,16 @@ class UserController {
         })
         .catch(next);
         
+    }
+
+    deleteFormTeam(req, res, next){
+        const idTable = req.body.Idtable;
+        console.log(req.body.Idtable);
+        req.body.deleted = true;
+
+        Table.updateOne({_id: idTable}, req.body)
+        .then(() => res.redirect('/user/team'))
+        .catch(next)
     }
 }
 
