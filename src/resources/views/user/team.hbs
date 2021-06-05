@@ -10,6 +10,73 @@
 
 </head>
 <body>
+<!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+          {{#each tables}}
+          {{#if column1}} 
+        <div class="list-item" >
+          <input class="titlebox2" type="text" name="title" placeholder="Title" style="background-color: {{this.status}};"  value="{{this.title}}" readonly/>
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
+          <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
+        </div>
+        {{/if}}
+        {{/each}}
+      </div>
+    </div>
+<!-- The Modal -->
+    <div id="myModal2" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close2">&times;</span>
+          {{#each tables}}
+          {{#if column2}} 
+        <div class="list-item" >
+          <input class="titlebox2" type="text" name="title" placeholder="Title" style="background-color: {{this.status}};" value="{{this.title}}" readonly/>
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
+          <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
+        </div>
+        {{/if}}
+        {{/each}}
+      </div>
+      <br>
+    </div>
+<!-- The Modal -->
+    <div id="myModal3" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close3">&times;</span>
+          {{#each tables}}
+          {{#if column3}} 
+        <div class="list-item" >
+          <input class="titlebox2" type="text" name="title" placeholder="Title" style="background-color: {{this.status}};" value="{{this.title}}" readonly/>
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
+          <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
+        </div>
+        {{/if}}
+        {{/each}}
+      </div>
+    </div>
+<!-- The Modal -->
+    <div id="myModal4" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close4">&times;</span>
+          {{#each tables}}
+          {{#if column4}} 
+        <div class="list-item" >
+          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" style="background-color: {{this.status}};" readonly/>
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
+          <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
+        </div>
+        {{/if}}
+        {{/each}}
+      </div>
+    </div>
+
+
     <div class="contain-all">
       <nav>
           <input type="checkbox" id="check">
@@ -39,6 +106,7 @@
   <div class="app">
     <div class="lists">
       <div class="list">
+        <button class="save-form" onclick="addtitle()">Preview</button>
         <form class="list-item" method="POST" id="form-add1" style="display: none;">
           <input type="hidden" name="column1" value="column1" >
           <input class="titlebox2" type="text" name="title" placeholder="Title"  />
@@ -56,7 +124,7 @@
 
 
         <div class="list-item">
-          <button class="titlebox2" onclick="" >{{this.title}}</button>               
+          <button class="titlebox2" onclick="" style="background-color: {{this.status}};">{{this.title}}</button>               
           <form  method="POST" action="/user/edit-table-team" >
             <input type="hidden" name="Idtable" value="{{this._id}}">
             <div class="edit-btn">
@@ -72,6 +140,7 @@
       </div>
 
       <div class="list">
+        <button class="save-form" onclick="addtitle2()">Preview</button>
        <form class="list-item" method="POST"  id="form-add2" style="display: none;">
           <input type="hidden" name="column2" value="column2" >
           <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" />
@@ -90,7 +159,7 @@
 
 
         <div class="list-item">
-          <button class="titlebox2" onclick="" >{{this.title}}</button>               
+          <button class="titlebox2" onclick="" style="background-color: {{this.status}};">{{this.title}}</button>               
           <form  method="POST" action="/user/edit-table-team" >
             <input type="hidden" name="Idtable" value="{{this._id}}">
             <div class="edit-btn">
@@ -104,6 +173,7 @@
       </div>
       
         <div class="list">
+        <button class="save-form" onclick="addtitle3()">Preview</button>
           <form class="list-item" method="POST"  id="form-add3" style="display: none;">
           <input type="hidden" name="column3" value="column3" >
           <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" />
@@ -121,7 +191,7 @@
 
 
         <div class="list-item">
-          <button class="titlebox2" onclick="" >{{this.title}}</button>               
+          <button class="titlebox2" onclick="" style="background-color: {{this.status}};">{{this.title}}</button>               
           <form  method="POST" action="/user/edit-table-team" >
             <input type="hidden" name="Idtable" value="{{this._id}}">
             <div class="edit-btn">
@@ -135,6 +205,7 @@
         </div>
       
         <div class="list">
+        <button class="save-form" onclick="addtitle4()">Preview</button>
           <form class="list-item" method="POST" id="form-add4" style="display: none;">
           <input type="hidden" name="column4" value="column4" >
           <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" />
@@ -152,7 +223,7 @@
 
 
         <div class="list-item">
-          <button class="titlebox2" onclick="" >{{this.title}}</button>               
+          <button class="titlebox2" onclick="" style="background-color: {{this.status}};">{{this.title}}</button>               
           <form  method="POST" action="/user/edit-table-team" >
             <input type="hidden" name="Idtable" value="{{this._id}}">
             <div class="edit-btn">
@@ -170,7 +241,84 @@
 </div>
 
 </body>
+<script>
+  // Get the modal
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
 
+function addtitle(){
+    modal.style.display = "block";
+
+}
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+  // Get the modal
+var modal2 = document.getElementById("myModal2");
+var span2 = document.getElementsByClassName("close2")[0];
+
+function addtitle2(){
+    modal2.style.display = "block";
+
+}
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function() {
+  modal2.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal2) {
+    modal2.style.display = "none";
+  }
+}
+  // Get the modal
+var modal3 = document.getElementById("myModal3");
+var span3 = document.getElementsByClassName("close3")[0];
+
+function addtitle3(){
+    modal3.style.display = "block";
+
+}
+// When the user clicks on <span> (x), close the modal
+span3.onclick = function() {
+  modal3.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal3) {
+    modal3.style.display = "none";
+  }
+}
+  // Get the modal
+var modal4 = document.getElementById("myModal4");
+var span4 = document.getElementsByClassName("close4")[0];
+
+function addtitle4(){
+    modal4.style.display = "block";
+
+}
+// When the user clicks on <span> (x), close the modal
+span4.onclick = function() {
+  modal4.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal4) {
+    modal4.style.display = "none";
+  }
+}  
+</script>
 <script>
   function myFunction1() {
     var formAdd1 = document.getElementById('form-add1');

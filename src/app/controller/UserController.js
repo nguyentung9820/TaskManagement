@@ -21,15 +21,7 @@ class UserController {
         
     }
 
-    deleteFormUser(req, res, next){
-        const idTable = req.body.Idtable;
-        console.log(req.body.Idtable);
-        req.body.deleted = true;
-
-        Table.updateOne({_id: idTable}, req.body)
-        .then(() => res.redirect('/user'))
-        .catch(next)
-    }
+   
 
     // [GET] /user/info
     async info(req, res, next){
@@ -103,15 +95,7 @@ class UserController {
         
     }
 
-    deleteFormTeam(req, res, next){
-        const idTable = req.body.Idtable;
-        console.log(req.body.Idtable);
-        req.body.deleted = true;
-
-        Table.updateOne({_id: idTable}, req.body)
-        .then(() => res.redirect('/user/team'))
-        .catch(next)
-    }
+    
 }
 
 

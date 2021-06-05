@@ -5,6 +5,7 @@ const Table = require("../models/Table");
 
 
 class EditController{
+
 // [POST] /user/edit-table 
 editForm(req, res , next){
     Table.find({_id: req.body.Idtable})
@@ -38,6 +39,26 @@ editFormTeam(req, res , next){
 // [PUT] /user/edit-table-team
 editTeamTable(req, res, next){
     Table.updateOne({_id: req.body.Idtable}, req.body)
+    .then(() => res.redirect('/user/team'))
+    .catch(next)
+}
+
+deleteFormUser(req, res, next){
+    const idTable = req.body.Idtable;
+    console.log(req.body.Idtable);
+    req.body.deleted = true;
+
+    Table.updateOne({_id: idTable}, req.body)
+    .then(() => res.redirect('/user'))
+    .catch(next)
+}
+
+deleteFormTeam(req, res, next){
+    const idTable = req.body.Idtable;
+    console.log(req.body.Idtable);
+    req.body.deleted = true;
+
+    Table.updateOne({_id: idTable}, req.body)
     .then(() => res.redirect('/user/team'))
     .catch(next)
 }
