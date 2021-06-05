@@ -5,7 +5,20 @@ input[type=text], select {
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-size: larger;
+  font-family: 'Times New Roman', Times, serif; }
+
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: larger;
+  font-family: 'Times New Roman', Times, serif; }
 
 input[type=submit] {
   width: 100%;

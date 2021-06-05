@@ -48,23 +48,26 @@
           <input class="save-form" type="submit" value="SAVE" />
         </form>
         
-                {{#each tables}}
-                {{#if column1}}
+        {{#each tables}}
+        {{#if column1}}
           <form id="{{this._id}}" action="/user/team?_method=PUT" method="POST">
             <input type="hidden" name="Idtable" value="{{this._id}}">
           </form>
-                
-        <form class="list-item" method="POST" action="/user/edit-table-team" id="form-add1">
-          <input type="hidden" name="Idtable" value="{{this._id}}">
-          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
-          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
-          <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
-          <input class="save-form" type="submit" value="Edit" />
-          <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
 
-        </form>
-                {{/if}}
-                {{/each}}
+
+        <div class="list-item">
+          <button class="titlebox2" onclick="" >{{this.title}}</button>               
+          <form  method="POST" action="/user/edit-table-team" >
+            <input type="hidden" name="Idtable" value="{{this._id}}">
+            <div class="edit-btn">
+              <input class="save-form" type="submit" value="Edit" />
+              <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
+            </div>
+          </form>
+        </div>
+        
+        {{/if}}
+        {{/each}}
 
       </div>
 
@@ -80,21 +83,22 @@
         </form>
         
                 {{#each tables}}
-                
                 {{#if column2}}
           <form id="{{this._id}}" action="/user/team?_method=PUT" method="POST">
             <input type="hidden" name="Idtable" value="{{this._id}}">
           </form>
 
-         <form class="list-item" method="POST" action="/user/edit-table-team" id="form-add2" >
-          <input type="hidden" name="Idtable" value="{{this._id}}">
-          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
-          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
-          <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
-          <input class="save-form" type="submit" value="Edit" />
-          <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
 
-        </form>
+        <div class="list-item">
+          <button class="titlebox2" onclick="" >{{this.title}}</button>               
+          <form  method="POST" action="/user/edit-table-team" >
+            <input type="hidden" name="Idtable" value="{{this._id}}">
+            <div class="edit-btn">
+              <input class="save-form" type="submit" value="Edit" />
+              <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
+            </div>
+          </form>
+        </div>
                 {{/if}}
                 {{/each}}
       </div>
@@ -115,15 +119,17 @@
             <input type="hidden" name="Idtable" value="{{this._id}}">
           </form>
 
-         <form class="list-item" method="POST" action="/user/edit-table-team" id="form-add3">
-          <input type="hidden" name="Idtable" value="{{this._id}}">
-          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
-          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
-          <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
-          <input class="save-form" type="submit" value="Edit" />
-          <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
 
-        </form> 
+        <div class="list-item">
+          <button class="titlebox2" onclick="" >{{this.title}}</button>               
+          <form  method="POST" action="/user/edit-table-team" >
+            <input type="hidden" name="Idtable" value="{{this._id}}">
+            <div class="edit-btn">
+              <input class="save-form" type="submit" value="Edit" />
+              <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
+            </div>
+          </form>
+        </div>
                 {{/if}}
                 {{/each}}
         </div>
@@ -144,15 +150,17 @@
             <input type="hidden" name="Idtable" value="{{this._id}}">
           </form>
 
-         <form class="list-item" method="POST" action="/user/edit-table-team" id="form-add4">
-          <input type="hidden" name="Idtable" value="{{this._id}}">
-          <input class="titlebox2" type="text" name="title" placeholder="Title" value="{{this.title}}" readonly/>
-          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  readonly>{{this.description}}</textarea>
-          <div class="date"><strong>Deadline:</strong> {{this.deadline}}</div>
-          <input class="save-form" type="submit" value="Edit" />
-          <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
 
-        </form>
+        <div class="list-item">
+          <button class="titlebox2" onclick="" >{{this.title}}</button>               
+          <form  method="POST" action="/user/edit-table-team" >
+            <input type="hidden" name="Idtable" value="{{this._id}}">
+            <div class="edit-btn">
+              <input class="save-form" type="submit" value="Edit" />
+              <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
+            </div>
+          </form>
+        </div>
                 {{/if}}
                 {{/each}}
         </div>

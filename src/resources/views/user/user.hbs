@@ -6,11 +6,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/user.css" />
-  <link rel="stylesheet" href="/css/modal.css" />
+  {{!-- <link rel="stylesheet" href="/css/modal.css" /> --}}
 </head>
 
 <body>
-<!-- The Modal -->
+{{!-- <!-- The Modal -->
     <div id="myModal" class="modal">
       <!-- Modal content -->
       <div class="modal-content">
@@ -25,80 +25,8 @@
         {{/if}}
         {{/each}}
       </div>
-    </div>
+    </div> --}}
 
-<!-- The Alert -->
-    <div id="alert1" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close1">&times;</span>
-        <div class="alert-del">
-          <h1>Are you sure want to delete this table ?</h1>
-          {{#each tables}}
-          {{#if column1}}
-          <form>
-          <input class="del-but" type="submit" value="Delete" form="{{this._id}}" />
-          </form>
-          {{/if}}
-          {{/each}}
-        </div>
-
-      </div>
-    </div>
-
-<!-- The Alert -->
-    <div id="alert2" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close2">&times;</span>
-        <div class="alert-del">       
-          <h1>Are you sure want to delete this table ?</h1>
-          {{#each tables}}
-          {{#if column2}}
-          <form>
-          <input class="del-but" type="submit" value="Delete" form="{{this._id}}" />
-          </form>
-          {{/if}}
-          {{/each}}
-        </div> 
-      </div>
-    </div>
-
-<!-- The Alert -->
-    <div id="alert3" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close3">&times;</span>
-        <div class="alert-del">       
-          <h1>Are you sure want to delete this table ?</h1>
-          {{#each tables}}
-          {{#if column3}}
-          <form>
-          <input class="del-but" type="submit" value="Delete" form="{{this._id}}" />
-          </form>
-          {{/if}}
-          {{/each}}
-        </div> 
-      </div>
-    </div>
-
-<!-- The Alert -->
-    <div id="alert4" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close4">&times;</span>
-        <div class="alert-del">       
-          <h1>Are you sure want to delete this table ?</h1>
-          {{#each tables}}
-          {{#if column4}}
-          <form>
-          <input class="del-but" type="submit" value="Delete" form="{{this._id}}" />
-          </form>
-          {{/if}}
-          {{/each}}
-        </div> 
-      </div>
-    </div>
 
     <div class="contain-all">
       <nav>
@@ -144,12 +72,12 @@
 
 
         <div class="list-item">
-          <button class="titlebox2" onclick="addtitle()" >{{this.title}}</button>               
+          <button class="titlebox2" onclick="" >{{this.title}}</button>               
           <form  method="POST" action="/user/edit-table" >
             <input type="hidden" name="Idtable" value="{{this._id}}">
             <div class="edit-btn">
               <input class="save-form" type="submit" value="Edit" />
-              <input class="save-form" value="Delete" onclick="addtitle1()"  />
+              <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
             </div>
           </form>
         </div>
@@ -181,7 +109,7 @@
             <input type="hidden" name="Idtable" value="{{this._id}}">
             <div class="edit-btn">
               <input class="save-form" type="submit" value="Edit" />
-              <input class="save-form" value="Delete" onclick="addtitle2()"  />
+              <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
             </div>
           </form>
         </div>
@@ -211,7 +139,7 @@
             <input type="hidden" name="Idtable" value="{{this._id}}">
             <div class="edit-btn">
               <input class="save-form" type="submit" value="Edit" />
-              <input class="save-form" value="Delete" onclick="addtitle3()"  />
+              <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
             </div>
           </form>
         </div>
@@ -240,7 +168,7 @@
             <input type="hidden" name="Idtable" value="{{this._id}}">
             <div class="edit-btn">
               <input class="save-form" type="submit" value="Edit" />
-              <input class="save-form" value="Delete" onclick="addtitle4()"  />
+              <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
             </div>
           </form>
         </div>
@@ -253,87 +181,6 @@
 </div>
 
 </body>
-  <script >
-  // alert1
-var modal1 = document.getElementById("alert1");
-var span = document.getElementsByClassName("close1")[0];
-
-function addtitle1(){
-    modal1.style.display = "block";
-
-}
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal1.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal1) {
-    modal1.style.display = "none";
-  }
-}
-
-  // alert2
-var modal2 = document.getElementById("alert2");
-var span = document.getElementsByClassName("close2")[0];
-
-function addtitle2(){
-    modal2.style.display = "block";
-
-}
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal2.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal2) {
-    modal2.style.display = "none";
-  }
-}
-
-// alert3
-var modal3 = document.getElementById("alert3");
-var span = document.getElementsByClassName("close3")[0];
-
-function addtitle3(){
-    modal3.style.display = "block";
-
-}
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal3.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal3) {
-    modal3.style.display = "none";
-  }
-}
-
-// alert4
-var modal4 = document.getElementById("alert4");
-var span = document.getElementsByClassName("close4")[0];
-
-function addtitle4(){
-    modal4.style.display = "block";
-
-}
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal4.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal4) {
-    modal4.style.display = "none";
-  }
-}
-</script>
 
 <script>
   // Get the modal

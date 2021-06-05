@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const Table = new Schema({
     id: { type: String},
     codeIdTeam:{type: String, default: null},
-    status: {type: String},
+    status: {type: String, default: "done"},
     title: { type: String },
     description: { type: String},
     deadline: { type: Date },

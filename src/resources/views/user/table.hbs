@@ -24,6 +24,7 @@
     </nav>
 <div>
 <br/>
+<a style="font-size: larger;" href="/user">Back</a>
 <h1 style="text-align: center;" >Edit your table</h1>
     {{#each tables}}
   <form action="/user/edit-table?_method=PUT" method="POST">
@@ -31,7 +32,7 @@
     <input type="text" id="title" name="title" placeholder="Title" value="{{this.title}}">
     <br/>
     <label for="Description">Description</label>
-    <input type="text" id="description" name="description" placeholder="Description.." value="{{this.description}}">
+    <textarea type="text" id="description" name="description" placeholder="Description.." >{{this.description}}</textarea>
     <br/>
     <label for="Description">Deadline</label>
     <input type="datetime-local" id="deadline" name="deadline" placeholder="deadline.." > 
