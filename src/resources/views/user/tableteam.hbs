@@ -30,11 +30,12 @@
     {{#if status}}
     <label for="status">Your status is: {{this.status}}</label>
     {{/if}}
-    <form action="/user/edit-table?_method=PUT" method="POST">
+    <form action="/user/edit-table-team?_method=PUT" method="POST">
       <label for="status">Choose status of table:</label>
       <select name="status" id="status">
-        <option value="green">green</option>
-        <option value="red">red</option>
+        <option value="lightgreen">green</option>
+        <option value="sandybrown">brown</option>
+        <option value="powderblue">blue</option>
       </select>
     <label for="Title">Title</label>
     <input type="text" id="title" name="title" placeholder="Title" value="{{this.title}}">

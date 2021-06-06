@@ -62,6 +62,8 @@ deleteFormTeam(req, res, next){
     .then(() => res.redirect('/user/team'))
     .catch(next)
 }
+
+
 }
 
 
