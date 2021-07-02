@@ -10,6 +10,7 @@ const Course = new Schema({
     company: { type: String },
     createdAt: { type: Date, default: Date.now},
     updateAt: { type: Date, default: Date.now },
+    background:{ type: String}
 });
 Course.virtual('Id').get(function(){
     return this._id;

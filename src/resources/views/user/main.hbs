@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScheduleX</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/main.css"/>
+    <link rel="stylesheet" href="/css/modal2.css"/>
+  </head>
+  <style>
+      body{
+          background-image: url('/img/mou2.png');
+      }
+      .container{
+          margin-top: 70px;
+      }
+  </style>
+  <body>
+<!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="closemodal">&times;</span>
+          {{#each courses}}
+          <div>{{this.username}}</div>
+          {{/each}}
+      </div>
+    </div>
+    <header>
+      <a href="#" class="brand">ScheduleX</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a onclick="contact()">PROFILE</a>
+          <a href="/user/team">JOIN TEAM</a>
+          <a href="/logout">LOG OUT</a>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+
+    <div class="toolbars">
+        <button class="ADD" id="show-form1" onclick="myFunction1()">+</button>
+        <button class="ADD" id="show-form2" onclick="myFunction2()">+</button>
+        <button class="ADD" id="show-form3" onclick="myFunction3()">+</button>
+        <button class="ADD" id="show-form4" onclick="myFunction4()">+</button>
+      </div>
+    
+
+  <div class="app">
+    <div class="lists">
+      <div class="list">
+        <form class="list-item" method="POST" action="/user/create" id="form-add1" style="display: none;">
+          <input type="hidden" type="text" name="column1" value="column1"/>
+          <input class="titlebox2" type="text" name="title" placeholder="Title"  />
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  ></textarea>
+          <input class="date" name="deadline" type="datetime-local"  />
+          <input class="save-form" type="submit" value="SAVE" />
+        </form>        
+        
+        {{#each tables}}
+        {{#if column1}}
+          <form id="{{this._id}}" action="/user?_method=PUT" method="POST">
+            <input type="hidden" name="Idtable" value="{{this._id}}">
+          </form>
+
+
+        <div class="list-item">
+          <button class="titlebox2"  style="background-color: {{this.status}};">{{this.title}}</button>               
+          <form  method="POST" action="/user/edit-table" >
+            <input type="hidden" name="Idtable" value="{{this._id}}">
+            <div class="edit-btn">
+              <input class="save-form" type="submit" value="Edit" />
+              <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
+            </div>
+          </form>
+        </div>
+        
+        {{/if}}
+        {{/each}}
+
+      </div>
+
+      <div class="list">
+       <form class="list-item" method="POST" action="/user/create" id="form-add2" style="display: none;">
+          <input type="hidden" type="text" name="column2" value="column2"/>
+          <input class="titlebox2" type="text" name="title" placeholder="Title"  />
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  ></textarea>
+          <input class="date" name="deadline" type="datetime-local"  />
+          <input class="save-form" type="submit" value="SAVE" />
+        </form>
+        
+        {{#each tables}}
+        {{#if column2}}
+        <form id="{{this._id}}" action="/user?_method=PUT" method="POST">
+            <input type="hidden" name="Idtable" value="{{this._id}}">
+          </form>
+
+
+        <div class="list-item">
+          <button class="titlebox2" onclick="" style="background-color: {{this.status}};">{{this.title}}</button>               
+          <form  method="POST" action="/user/edit-table" >
+            <input type="hidden" name="Idtable" value="{{this._id}}">
+            <div class="edit-btn">
+              <input class="save-form" type="submit" value="Edit" />
+              <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
+            </div>
+          </form>
+        </div>
+        {{/if}}
+        {{/each}}
+      </div>
+      
+        <div class="list">
+        <form class="list-item" method="POST" action="/user/create" id="form-add3" style="display: none;">
+          <input type="hidden" type="text" name="column3" value="column3"/>
+          <input class="titlebox2" type="text" name="title" placeholder="Title"/>
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  ></textarea>
+          <input class="date" name="deadline" type="datetime-local"  />
+          <input class="save-form" type="submit" value="SAVE" />
+        </form>
+        {{#each tables}}
+        {{#if column3}}                
+
+        <form id="{{this._id}}" action="/user?_method=PUT" method="POST">
+            <input type="hidden" name="Idtable" value="{{this._id}}">
+          </form>
+
+
+        <div class="list-item">
+          <button class="titlebox2" style="background-color: {{this.status}};">{{this.title}}</button>               
+          <form  method="POST" action="/user/edit-table" >
+            <input type="hidden" name="Idtable" value="{{this._id}}">
+            <div class="edit-btn">
+              <input class="save-form" type="submit" value="Edit" />
+              <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
+            </div>
+          </form>
+        </div>
+        {{/if}}
+        {{/each}}
+        </div>
+      
+        <div class="list">
+          <form class="list-item" method="POST" action="/user/create" id="form-add4" style="display: none;">
+          <input type="hidden" type="text" name="column4" value="column4"/>
+          <input class="titlebox2" type="text" name="title" placeholder="Title"  />
+          <textarea class="inp" type="text" name="description" placeholder="Descriptions"  ></textarea>
+          <input class="date" name="deadline" type="datetime-local"  />
+          <input class="save-form" type="submit" value="SAVE" />
+        </form>
+        {{#each tables}}
+        {{#if column4}}
+        <form id="{{this._id}}" action="/user?_method=PUT" method="POST">
+            <input type="hidden" name="Idtable" value="{{this._id}}">
+          </form>
+
+
+        <div class="list-item">
+          <button class="titlebox2" onclick="" style="background-color: {{this.status}};">{{this.title}}</button>               
+          <form  method="POST" action="/user/edit-table" >
+            <input type="hidden" name="Idtable" value="{{this._id}}">
+            <div class="edit-btn">
+              <input class="save-form" type="submit" value="Edit" />
+              <input class="save-form" type="submit" value="Delete" form="{{this._id}}" />
+            </div>
+          </form>
+        </div>
+        {{/if}}      
+        {{/each}}
+        </div>
+    </div>
+  </div>
+    
+    </div>
+
+   
+
+  </body>
+  <script>
+  
+  function myFunction1() {
+    var formAdd1 = document.getElementById('form-add1');
+    if (formAdd1.style.display === "none") {
+      formAdd1.style = "";
+    } else {
+      formAdd1.style.display = "none";
+    }
+  }
+
+  function myFunction2() {
+    var formAdd2 = document.getElementById('form-add2');
+    if (formAdd2.style.display === "none") {
+      formAdd2.style = "";
+    } else {
+      formAdd2.style.display = "none";
+    }
+  }
+
+  function myFunction3() {
+    var formAdd3 = document.getElementById('form-add3');
+    if (formAdd3.style.display === "none") {
+      formAdd3.style = "";
+    } else {
+      formAdd3.style.display = "none";
+    }
+  }
+
+  function myFunction4() {
+    var formAdd4 = document.getElementById('form-add4');
+    if (formAdd4.style.display === "none") {
+      formAdd4.style = "";
+    } else {
+      formAdd4.style.display = "none";
+    }
+  }
+</script>
+  <script>
+    // Get the modal
+var modal = document.getElementById("myModal");
+var spanx = document.getElementsByClassName("closemodal")[0];
+
+function contact(){
+    modal.style.display = "block";
+
+}
+// When the user clicks on <span> (x), close the modal
+spanx.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+    </script>
+</html>

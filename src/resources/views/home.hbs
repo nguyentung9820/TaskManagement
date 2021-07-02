@@ -1,39 +1,228 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-<head>
-  <title>Home</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <link rel="stylesheet" href="/css/home.css" />
-</head>
-<style>
-        body{
-            background-image: url('/img/draw3.svg');
-        }
-</style>
-<body>
-  <nav>
-    <input type="checkbox" id="check">
-    <label for="check" class="checkbtn">
-      <i class="fas fa-bars"></i>
-    </label>
-    <label class="logo">ScheduleX</label>
-    <ul>
-        <li><a href="/" class="button">HOME</a></li>
-        <li><a href="/aboutus" class="button">ABOUT US</a></li>
-    </ul>
-  </nav>
-  <div>
-    <div class="homecontent">
-      <div class="hometitle">ScheduleX helps teams move work forward.</div>
-      <div class="description">Collaborate, manage projects, and reach new productivity peaks.
-        From high rises to the home office, the way
-        your team works is unique accomplish it all with ScheduleX.</div>
-      <button class="buttonlogin"><a href="/login">Join with us</a></button>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScheduleX</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/modal2.css"/>
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <style>
+      
+  </style>
+  <body>
+<!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="closemodal">&times;</span>
+        <div class="login">
+            <p style="border-left: 5px solid #2271b1; padding:12px; background-color:#fff;
+                margin-bottom:25px;font-size:14px; box-shadow:rgb(0 0 0 /10%) 0 0 10px;">Sign up on this page</p>
+            <form name="action-form" action="/signup" id="signup-form" class="form" method="post">
+                <div class="user-name">
+                    <label for="user-name">Username</label>
+                    <input type="text" name="username" id="user_name_new" />
+                </div>
+                <div class="user-email">
+                    <label for="user-email">Email</label>
+                    <div>
+                        <input type="email" name="email" id="user_email" />
+                    </div>
+                </div>
+                <div class="user-name">
+                    <label for="user-name">Password</label>
+                    <input type="password" name="password" id="user_name_new" />
+                </div>
+                <p style="margin:10px 0 20px 0;font-size:14px;">
+                    An email will be sent to validate your account.
+                </p>
+                <input style="margin-left:105px;" type="submit" value="Sign up" />
+            </form>
+            
+        </div>     
+          </div>
     </div>
-  </div>
-</body>
+<!-- The Modal -->
+    <div id="myModal2" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="closemodal2">&times;</span>
+        <div class="login">
+                <form name="action-form" action="/login" id="login-form" class="form" method="post">
+                    <div class="user-name">
+                        <label for="user-name">Username</label>
+                        <input type="text" name="username" id="user_name" class="input" />
+                    </div>
+                    <div class="user-pass">
+                        <label for="user-pass">Password</label>
+                        <div>
+                            <input type="password" name="password" id="user_pass" class="input" />
+                        </div>
+                    </div>
+                    <div style="margin:5px 0 20px;">
+                        <label>
+                            Prove your humanity
+                        </label>
+                        <br />
+                        <span style="font-size:16px;">3&nbsp;&nbsp;+&nbsp;&nbsp;7 = </span>
+                        <input type="text" style="width:25px;height:30px;font-size:16px;" />
+                    </div>
+                    <div class="remember-acc">
+                        <input type="checkbox" style="vertical-align: middle;" name="rememberme" id="remember" />
+                        <label style="margin-right:22px;">Auto login</label>
+                    </div>
+                    <p>
+                        <input type="submit" value="Sign in" id="submit" />
+                    </p>
+                </form>
+               
+            </div>          
+              </div>
+    </div>
+    <header>
+      <a href="#" class="brand">ScheduleX</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="/">Home</a>
+          <a  onclick="contact()">Sign up</a>
+          <a  onclick="contact2()">Sign in</a>
+          <a href="#">Gallery</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </header>
 
+    <section class="home">
+      <img class="video-slide active" src="/img/mou2.png" autoplay muted loop>
+      <img class="video-slide" src="/img/mou3.jpg" autoplay muted loop>
+      <img class="video-slide" src="/img/mou4.jpg" autoplay muted loop>
+      <img class="video-slide" src="/img/mou5.jpg" autoplay muted loop>
+      <div class="content active">
+        <h1>ScheduleX.<br><span>Hust</span></h1>
+        <p>
+            ScheduleX is the easy, free, flexible, and visual way to manage your projects and organize anything.
+            <br/>
+            Collaborate, manage projects, and reach new productivity peaks. 
+            From high rises to the home office, the way your team works is unique—accomplish it all with ScheduleX.</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>ScheduleX.<br><span></span></h1>
+        <p>
+            We provide a website with essensial extention to help you manage your job.
+        </p>
+        
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Adventures.<br><span>Off Road</span></h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <a href="#">Read More</a>
+      </div>
+      
+      <div class="content">
+        <h1>Feel Nature.<br><span>Relax</span></h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </section>
+    
+    
+
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+  </body>
+  <script>
+    // Get the modal
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("closemodal")[0];
+
+function contact(){
+    modal.style.display = "block";
+
+}
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+// Get the modal
+var modal2 = document.getElementById("myModal2");
+var span2 = document.getElementsByClassName("closemodal2")[0];
+
+function contact2(){
+    modal2.style.display = "block";
+
+}
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function() {
+  modal2.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal2) {
+    modal2.style.display = "none";
+  }
+}
+    </script>
 </html>

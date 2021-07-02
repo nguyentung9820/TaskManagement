@@ -5,7 +5,7 @@ class LoginController {
 
     // [GET] /login
     index(req, res, next) {
-        return res.render('login', { layout: false });
+        return res.redirect('/')
     }
 
     // [POST] /login
@@ -23,7 +23,7 @@ class LoginController {
             if (!info) {
                 console('Info not !!!!!!!!!!!!!!!');
                 // res.send('ok')
-                res.redirect('/login')
+                res.redirect('/')
                 return;
             }
             else if (info.password == pass) {
@@ -33,7 +33,7 @@ class LoginController {
             }
 
         } catch (error) {
-            res.redirect('/login')
+            res.redirect('/')
 
 
         }

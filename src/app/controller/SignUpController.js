@@ -4,7 +4,7 @@ class SignUpController {
    
     // [GET] /signup
     index(req, res){
-        res.render('signup', {layout: false})
+        res.redirect('/')
     }
 
     // [POST] /signup
@@ -12,7 +12,7 @@ class SignUpController {
         const course = new Course(req.body);
         course.save();
         
-        res.redirect('/login')
+        res.redirect('/')
     }
     
 }

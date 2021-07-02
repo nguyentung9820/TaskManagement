@@ -4,13 +4,10 @@ class SiteController {
 
     // [GET] /
     home(req, res){
-        res.render('home');
+        res.render('home',{layout: false});
     }
 
-    // [GET] /aboutus
-    aboutus(req, res){
-        res.render('aboutus');
-    }
+    
 }
 
 

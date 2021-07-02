@@ -95,7 +95,20 @@ class UserController {
         
     }
 
-    
+    mainsite(req, res, next){
+        const auth = req.cookies['oreo'];
+        var infoList = Course.find({_id: auth});
+
+        Table.find({id: auth, deleted: false})
+        .then((tables, courses) => {
+            res.render('user/main', {
+                tables: mutipleMongooseToObject(tables),
+				courses: mutipleMongooseToObject(infoList),
+                layout: false
+            });
+        })
+        .catch(next);
+    }    
 }
 
 

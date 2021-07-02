@@ -26,4 +26,6 @@ router.get('/edit-table-team',authMiddleware.checkIdTeam, editController.editFor
 router.post('/edit-table-team',authMiddleware.checkIdTeam, editController.editFormTeam)
 router.put('/edit-table-team',authMiddleware.checkIdTeam, editController.editTeamTable)
 
+router.get('/main', userController.mainsite)
+
 module.exports = router;
