@@ -8,7 +8,7 @@
  
  
 .login {
-   width: 350px;
+    width: 400px;
    padding: 5% 0 0;
    margin: auto;
  }
@@ -22,16 +22,7 @@
    text-align: center;
  }
  
- .login h1 a {
-   background-image: url('/img/trello-logo-blue.png');
-   background-repeat: no-repeat;
-   background-size: 150px;
-   height: 85px;
-   width: 150px;
-   display: block;
-   margin: 0 auto 10px;
-   text-indent: -9999px;
- }
+ 
  
  input {
    font-family: inherit;
@@ -108,27 +99,7 @@
    overflow: hidden;
  }
  
- .back-ground .left-bg {
-   background-image: url('/img/background_left.PNG');
-   background-repeat: no-repeat;
-   position: absolute;
-   background-size: 400px;
-   width: 400px;
-   height: 370px;
-   bottom: 0;
-   left: 0;
- }
  
- .back-ground .right-bg {
-   background-image: url('/img/background_right.PNG');
-   background-repeat: no-repeat;
-   position: absolute;
-   background-size: 400px;
-   width: 400px;
-   height: 305px;
-   bottom: 0;
-   right: 0;
- }
  
  .nav {
    display: flex;
@@ -143,4 +114,11 @@
  }
  
  
- 
+ @media (max-width: 600px){
+  .login {
+    width: 250px;
+    padding: 5% 0 0;
+    margin: auto;
+  }
+
+ }
