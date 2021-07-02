@@ -253,21 +253,27 @@ section{
   }
 
   .menu-btn{
-    background: url(menu.png)no-repeat;
+    background: url('/img/menu.png') no-repeat;
     background-size: 30px;
     background-position: center;
     width: 40px;
     height: 40px;
     cursor: pointer;
     transition: 0.3s ease;
+    background-color: rgb(80, 151, 233);
+    border-radius: 10px;
+    // z-index:999;
   }
 
   .menu-btn.active{
     z-index: 999;
-    background: url(close.png)no-repeat;
+    background:url('/img/menu.png') no-repeat;
     background-size: 25px;
     background-position: center;
     transition: 0.3s ease;
+    background-color: rgb(83, 129, 182);
+    border-radius: 10px;
+    height:40px
   }
 }
 

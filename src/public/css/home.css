@@ -208,19 +208,24 @@ section {
     border-radius: 5px;
     box-shadow: 0 5px 25px; }
   .menu-btn {
-    background: url(menu.png) no-repeat;
+    background: url("/img/menu.png") no-repeat;
     background-size: 30px;
     background-position: center;
     width: 40px;
     height: 40px;
     cursor: pointer;
-    transition: 0.3s ease; }
+    transition: 0.3s ease;
+    background-color: #5097e9;
+    border-radius: 10px; }
   .menu-btn.active {
     z-index: 999;
-    background: url(close.png) no-repeat;
+    background: url("/img/menu.png") no-repeat;
     background-size: 25px;
     background-position: center;
-    transition: 0.3s ease; } }
+    transition: 0.3s ease;
+    background-color: #5381b6;
+    border-radius: 10px;
+    height: 40px; } }
 
 @media (max-width: 560px) {
   .home .content h1 {
