@@ -215,7 +215,7 @@ section {
     height: 40px;
     cursor: pointer;
     transition: 0.3s ease;
-    background-color: #5097e9;
+    background-color: none;
     border-radius: 10px; }
   .menu-btn.active {
     z-index: 999;
