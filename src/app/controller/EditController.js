@@ -63,7 +63,26 @@ deleteFormTeam(req, res, next){
     .catch(next)
 }
 
+deleteTableTest(req, res, next){
+    const id = req.params.id    
+    Table.deleteOne({_id: id})
+    .then(() => res.redirect('/user') )
+}
 
+async dragend(req, res, next){
+    var pre_column = req.body.pre_column
+    var new_column = req.body.column
+    await Table.find({_id: req.body.idTable })
+    .then(tables => {
+        tables.forEach(datas =>{
+            datas[pre_column] = null
+            datas[new_column] = new_column
+            // console.log(pre_column)
+            Table.updateOne({_id: req.body.idTable}, datas)
+            .catch(next)
+        })
+    })
+}
 }
 
 

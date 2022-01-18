@@ -5,6 +5,9 @@ const userController = require('../app/controller/UserController');
 const authMiddleware = require('../middlewares/middleware');
 const editController = require('../app/controller/EditController');
 
+router.get('/drag/:id',editController.deleteTableTest);
+router.post('/dragend/:id', editController.dragend);
+
 router.get('/', userController.index);
 router.post('/create', userController.create);
 router.put('/', editController.deleteFormUser);

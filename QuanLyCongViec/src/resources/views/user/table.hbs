@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/news.css"/>
+    <link rel="stylesheet" href="/css/user.css" />
+    <title>Edit Table</title>
+</head>
+<body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">ScheduleX</label>
+      <ul>
+        <li><a class="active" href="/user">Profile</a></li>
+		<li><a class="active" href="/logout">Log out</a></li>
+        <li><a class="active" href="/user/team">Team</a></li>
+
+      </ul>
+      <ul>
+        <li><a href="/user"><img class="avatar" src="/img/avatar.png" alt="change your avatar"></a></li>
+      </ul>
+    </nav>
+<div>
+<br/>
+<a style="font-size: larger;" href="/user">Back</a>
+<h1 style="text-align: center;" >Edit your table</h1>
+    {{#each tables}}
+    {{#if status}}
+    <label for="status">Your status is: {{this.status}}</label>
+    {{/if}}
+    <form action="/user/edit-table?_method=PUT" method="POST">
+      <label for="status">Choose status of table:</label>
+      <select name="status" id="status">
+        <option value="lightgreen">green</option>
+        <option value="sandybrown">brown</option>
+        <option value="powderblue">blue</option>
+      </select>
+    <label for="Title">Title</label>
+    <input type="text" id="title" name="title" placeholder="Title" value="{{this.title}}">
+    <br/>
+    <label for="Description">Description</label>
+    <textarea type="text" id="description" name="description" placeholder="Description.." >{{this.description}}</textarea>
+    <br/>
+    <label for="Description">Deadline</label>
+    <input type="datetime-local" id="deadline" name="deadline" placeholder="deadline.." > 
+    <label>{{this.deadline}}</label>
+    <br/>
+    <input type="hidden" name="Idtable" value="{{this._id}}">
+    <input type="submit" value="Submit">
+  </form>
+</div>
+    {{/each}}
+</body>
+</html>

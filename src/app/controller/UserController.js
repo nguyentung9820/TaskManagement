@@ -9,10 +9,18 @@ class UserController {
    async index(req, res){
 
         const auth = req.cookies['oreo'];
-        Table.find({id: auth, deleted: false })
+        await Table.find({id: auth, deleted: false })
         .then(tables => {
+            var late = [];
+            tables.forEach(line => {
+                if(line.deadline < Date.now() && line.deadline != null && line.column4 == null){
+                    late.push([line._id, line.status, line.title, line.deadline, parseInt((Date.now() - line.deadline)/3600000)])
+                }
+            })
+            
             res.render('user/user',{
                 tables:  mutipleMongooseToObject(tables), 
+                late_jobs: late,
                 layout: false,
             }
             );
@@ -65,8 +73,15 @@ class UserController {
         Table.find({codeIdTeam: codeIdTeam, deleted: false})
 
         .then(tables => {
+            var late = [];
+            tables.forEach(line => {
+                if(line.deadline < Date.now() && line.deadline != null && line.column4 == null){
+                    late.push([line._id, line.status, line.title, line.deadline, parseInt((Date.now() - line.deadline)/3600000)])
+                }
+            })
             res.render('user/team', {
                 tables: mutipleMongooseToObject(tables),
+                late_jobs: late,
                 layout: false
             })
         })

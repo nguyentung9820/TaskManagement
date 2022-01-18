@@ -1,0 +1,146 @@
+#myInput {
+    box-sizing: border-box;
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    border-radius: 10px;
+  }
+  #myUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  
+  }
+  
+  #myUL li a {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+    
+  }
+  
+  #myUL li a:hover:not(.header) {
+    background-color: #eee;
+  }
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 999999; /* Sit on top */
+    padding-top: 60px; /* Location of the box */
+    padding-right: 400px;
+    padding-left: 400px;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .closemodal, .closemodal2{
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .closemodal:hover, .closemodal2:hover,
+  .closemodal, .closemodal2:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .search2{
+      padding-top: 5px;
+      width: 20px;
+      height: 20px;
+  }
+  #search2{
+    border-radius: 100%;
+  }
+  .alert-del{
+    display: flex;
+  }
+  .del-but{
+    border: none;
+    background-color: rgb(102, 156, 238);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-left: 1rem;
+    justify-content: center;
+    border-radius: 20px;
+    width: 300%;
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+  }
+  .del-but:hover{
+    background-color: brown;
+  }
+  @media (max-width: 600px){
+.modal{
+  display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 999999; /* Sit on top */
+    padding-top: 120px; /* Location of the box */
+    padding-right: 0px;
+    padding-left: 0px;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+#myInput {
+  box-sizing: border-box;
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 2px 3px 2px 3px;
+  border: 1px solid #ddd;
+  margin-bottom: 2px;
+  border-radius: 1.5px;
+}
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 2px;
+  text-decoration: none;
+  font-size: 10px;
+  color: black;
+  display: block
+  
+}
+  }
